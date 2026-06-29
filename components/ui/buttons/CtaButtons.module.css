@@ -1,0 +1,14 @@
+.ctaButtons {
+ 
+}
+
+
+.ctaButton {
+  background-color: var(--color-primary);
+  color: var(--text-color-primary);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
