@@ -1,14 +1,21 @@
-.ctaButtons {
- 
+.ctaButton {
+    background-color: var(--color-primary);
+    color: var(--text-color-primary);
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: .8rem 2rem;
+    transition: background-color .3s, color .3s, border-color .3s;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.5);
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
+    font-weight: 600;
+    font-family: var(--font-body);
 }
 
-
-.ctaButton {
-  background-color: var(--color-primary);
-  color: var(--text-color-primary);
-  border: none;
-  padding: 0.8rem 1.2rem;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.ctaButton:hover {
+    background-color: var(--color-secondary-cta);
+    color: var(--color-primary);
+    border-color: var(--color-primary);
 }

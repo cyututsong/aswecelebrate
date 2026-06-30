@@ -13,13 +13,9 @@ export default function Header() {
     return (
         <header className={style.header}>
             <div className={style.headerContent}>
-                <div className={style.logoContainer}>
                     <HeaderLogo />
-                </div>
-                <div className={style.navContainer}>
                     <HeaderMainNavigation />
                     <CtaButtons />
-                </div>
             </div>
 
         </header>

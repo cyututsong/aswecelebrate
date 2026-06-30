@@ -1,15 +1,16 @@
 import Link from 'next/link';
 import style from './Header.module.css';
 
+const menuItems = [
+    { name: 'Templates', href: '#templates' },
+    { name: 'Venues', href: '/venues' },
+    { name: 'Journal', href: '/journal' },
+    { name: 'FAQ', href: '#faq' },
+    { name: 'Contact', href: '/contact' },
+];
+    
 export default function HeaderMainNavigation() {
 
-    const menuItems = [
-        { name: 'Templates', href: '#templates' },
-        { name: 'Venues', href: '/venues' },
-        { name: 'FAQ', href: '#faq' },
-        { name: 'Contact', href: '/contact' },
-    ];
-    
     
     return (
         <nav className={style.navMenuContainer}>
@@ -20,7 +21,6 @@ export default function HeaderMainNavigation() {
             ))}
         </nav>
     );
-
 
 
 }

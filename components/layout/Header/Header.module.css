@@ -1,7 +1,7 @@
 .header {
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
-  padding: 1rem 1.5rem;
+  padding: 2rem 1.5rem;
 }
 
 .headerContent {
@@ -22,23 +22,18 @@
   align-items: center;
 }
 
-.navContainer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
 .navMenuContainer  {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 30px;
 }
 
 .navMenuContainer a {
   text-decoration: none;
   color: var(--foreground);
-  font-weight: 500;
+  font-weight: 400;
   transition: color 0.3s ease;
   font-family: var(--font-body);
   cursor: pointer;
+  letter-spacing: 0.75px;
 }
