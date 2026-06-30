@@ -47,10 +47,10 @@ export default function MainFooterContent(){
                     </ul>
                 </div>
                 <div>
-
+                    <h5>Follow Us</h5>
                 </div>
                 <div>
-                    
+
                 </div>
 
             </div>
