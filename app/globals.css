@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-
   --font-heading: var(--font-eb-garamond), 'EB Garamond', serif;
   --font-body: var(--font-manrope), 'Manrope', sans-serif;
   --background: #ffffff;
@@ -9,6 +8,7 @@
   --color-primary:#16404d;
   --color-secondary-cta:#f;
   --text-color-primary:#ffffff;
+  --background-beige:#f6f3ec;
 }
 
 body {
@@ -32,5 +32,10 @@ h1, h2, h3, h4, h5, h6 {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+}
+
+
+li, p, a, span {
+  font-family: var(--font-body);
 }

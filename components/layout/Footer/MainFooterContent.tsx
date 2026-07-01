@@ -2,6 +2,8 @@ import react from 'react';
 import Link from 'next/link';
 import style from './Footer.module.css';
 import Image from 'next/image';
+import { FaFacebookF } from 'react-icons/fa';
+import { FaPhone } from "react-icons/fa6";
 
 
 const quickLinks = [
@@ -11,7 +13,6 @@ const quickLinks = [
     { name: 'FAQ', href: '#faq' },
     { name: 'Contact', href: '/contact' },
 ];
-
 
 
 export default function MainFooterContent(){
@@ -48,9 +49,25 @@ export default function MainFooterContent(){
                 </div>
                 <div>
                     <h5>Follow Us</h5>
+                    <ul>
+                        <li>
+                            <a href="#" target="_blank">                               
+                                <FaFacebookF size={20} />
+                                <span className="elementor-icon-list-text">Facebook</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
                 <div>
-
+                    <h5>Contact Us</h5>
+                    <ul>
+                        <li>
+                            <a href="tel:+639650371441" target="_blank">
+                                <FaPhone size={20} />                             
+                                    <span className="elementor-icon-list-text">+63 965 037 1441</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
 
             </div>

@@ -11,7 +11,6 @@ const menuItems = [
     
 export default function HeaderMainNavigation() {
 
-    
     return (
         <nav className={style.navMenuContainer}>
             {menuItems.map((item) => (

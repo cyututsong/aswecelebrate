@@ -1,0 +1,27 @@
+.footer {
+    display: flex;   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-beige);
+}
+
+.footer > div {
+    max-width: 1600px;
+}
+
+.FooterContentContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100vw;
+    gap: 5rem;
+}
+
+.FooterContentContainer > div:nth-child(1) {
+    width: 40%;
+}
+
+.FooterContentContainer > div:not(:first-child) {
+    width: 20%;
+}
