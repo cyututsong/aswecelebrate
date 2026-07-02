@@ -1,6 +1,7 @@
 import react from 'react';
 import style from './Footer.module.css';
 import MainFooterContent from './MainFooterContent';
+import BottomFooter from './BottomFooter';
 
 
 const menuItems = [
@@ -17,7 +18,7 @@ export default function Footer() {
 
        <footer className={style.footer}>
             <MainFooterContent />
-            <div className={style.bottomFooter}></div>
+            <BottomFooter />
        </footer>
 
     );

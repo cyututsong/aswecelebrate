@@ -2,11 +2,11 @@ import Link from 'next/link';
 import style from './Header.module.css';
 
 const menuItems = [
-    { name: 'Templates', href: '#templates' },
-    { name: 'Venues', href: '/venues' },
+    { name: 'Templates', href: '/templates' },
+    { name: 'Venues', href: '/venue' },
     { name: 'Journal', href: '/journal' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Contact Us', href: '/contact-us' },
 ];
     
 export default function HeaderMainNavigation() {

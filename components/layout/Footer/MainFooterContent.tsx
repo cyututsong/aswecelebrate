@@ -4,6 +4,7 @@ import style from './Footer.module.css';
 import Image from 'next/image';
 import { FaFacebookF } from 'react-icons/fa';
 import { FaPhone } from "react-icons/fa6";
+import { HiOutlineMail } from "react-icons/hi";
 
 
 const quickLinks = [
@@ -17,8 +18,6 @@ const quickLinks = [
 
 export default function MainFooterContent(){
 
-
-
     return (
     
             <div className={style.FooterContentContainer}>
@@ -27,10 +26,10 @@ export default function MainFooterContent(){
                     <Image
                         src="/image/ASWECELEBRATE-LOGO-BLACK.png"
                         alt="As We Celebrate Logo"
-                        width={200}
+                        width={257}
                         height={40}
                         loading="eager"
-                        style={{ width: '200px', height: 'auto' }}
+                        style={{ width: '257px', height: 'auto' }}
                     />
 
                     <p> Beautiful wedding website designed to make your special day truly unforgettable! 💍✨</p>
@@ -67,6 +66,12 @@ export default function MainFooterContent(){
                                     <span className="elementor-icon-list-text">+63 965 037 1441</span>
                             </a>
                         </li>
+                        <li>
+                            <a href="mailto:info@aswecelebrate.com" target="_blank">
+                               <HiOutlineMail size={20} />                           
+                                    <span className="elementor-icon-list-text">info@aswecelebrate.com</span>
+                            </a>
+                        </li>                       
                     </ul>
                 </div>
 

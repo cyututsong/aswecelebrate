@@ -33,8 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${ebGaramond.variable} ${manrope.variable} h-full antialiased`}
-    >
+      className={`${ebGaramond.variable} ${manrope.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col" cz-shortcut-listen="true">
       <Header />        
         {children}

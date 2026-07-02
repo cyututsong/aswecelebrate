@@ -17,7 +17,6 @@ export default function Header() {
                     <HeaderMainNavigation />
                     <CtaButtons />
             </div>
-
         </header>
     );
 
