@@ -38,3 +38,22 @@ body {
 li, p, a, span {
   font-family: var(--font-body);
 }
+
+
+
+/* Cursor Trail Animations Effect - CSS*/
+
+@keyframes trailFadeOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.7) rotate(4deg);
+  }
+}
+
+.animate-trail-fade {
+  animation: trailFadeOut 1s forwards ease-out;
+}
