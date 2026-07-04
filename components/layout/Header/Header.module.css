@@ -37,3 +37,20 @@
   cursor: pointer;
   letter-spacing: 0.75px;
 }
+
+
+
+@media (max-width: 768px) {
+  .navMenuContainer {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+
+  .headerContent {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+}
