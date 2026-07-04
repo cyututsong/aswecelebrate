@@ -38,18 +38,40 @@
   letter-spacing: 0.75px;
 }
 
+.logoImage {
+  width: 200px;
+  height: auto;
+}
 
 
 @media (max-width: 768px) {
   .navMenuContainer {
     flex-direction: column;
     gap: 15px;
+    padding: 2rem 1.5rem;
+  }
+
+  .headerContent {
+        flex-direction: row;
+        align-items: center;
+  }
+
+  .header {
+    padding: 0.5rem 0.5rem;
+  }
+
+  .ctaButton {
+    padding: .5rem 1rem;
+  }
+
+  .logo img {
+      width: 150px !important;
   }
 
 
-  .headerContent {
-    flex-direction: column;
-    align-items: flex-start;
+  .logoImage {
+    width: 150px;
+    height: auto;
   }
 
 

@@ -14,7 +14,7 @@ export default function HeaderLogo() {
                 width={200}
                 height={40}
                 loading="eager"
-                style={{ width: '200px', height: 'auto' }}
+                className={style.logoImage}
             />
         </Link>
     );

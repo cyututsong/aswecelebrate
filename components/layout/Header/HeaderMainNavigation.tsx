@@ -6,7 +6,7 @@ const menuItems = [
     { name: 'Venues', href: '/venue' },
     { name: 'Journal', href: '/journal' },
     { name: 'FAQ', href: '/faq' },
-    { name: 'Contact Us', href: '/contact-us' },
+    { name: 'Contact Us', href: '/contact-us' }
 ];
     
 export default function HeaderMainNavigation() {

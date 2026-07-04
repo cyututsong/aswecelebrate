@@ -26,7 +26,7 @@ export default function HamburgerMenu() {
 
 
   return (
-    <nav className="relative w-full bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between z-50 font-sans">
+    <nav className="relativebg-white  border-b border-gray-200 px-4 py-3 flex items-center justify-between z-50 font-sans">
       
       {/* Left side: Burger / Close Trigger & Brand Logo */}
       <div className="flex items-center space-x-3">

@@ -14,8 +14,19 @@
     font-family: var(--font-body);
 }
 
+
 .ctaButton:hover {
     background-color: var(--color-secondary-cta);
     color: var(--color-primary);
     border-color: var(--color-primary);
+}
+
+
+
+@media (max-width: 768px) { 
+
+    .ctaButton {
+        padding: 0.5rem;
+    }    
+    
 }

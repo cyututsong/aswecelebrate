@@ -6,7 +6,6 @@ import { FaFacebookF } from 'react-icons/fa';
 import { FaPhone } from "react-icons/fa6";
 import { HiOutlineMail } from "react-icons/hi";
 
-
 const quickLinks = [
     { name: 'Templates', href: '#templates' },
     { name: 'Venues', href: '/venues' },
@@ -15,11 +14,9 @@ const quickLinks = [
     { name: 'Contact', href: '/contact' },
 ];
 
-
 export default function MainFooterContent(){
 
     return (
-    
             <div className={style.FooterContentContainer}>
 
                 <div>
@@ -79,8 +76,5 @@ export default function MainFooterContent(){
              
         
         )
-
-
-
 
 }
