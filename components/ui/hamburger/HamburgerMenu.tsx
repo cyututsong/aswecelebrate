@@ -20,7 +20,7 @@ export default function HamburgerMenu() {
   // Menu items matched directly to the layout
   const mainNavItems: NavItem[] = [
     { label: 'Templates', href: '/templates', hasSubmenu: true },
-    { label: 'Venues', href: '/venues', hasSubmenu: true },
+    { label: 'Venues', href: '/venue', hasSubmenu: true },
     { label: 'Journal', href: '/journal', hasSubmenu: true },
     { label: 'FAQ', href: '/faq', hasSubmenu: true },
     { label: 'Contact Us', href: '/contact-us', hasSubmenu: true }

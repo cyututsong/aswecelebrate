@@ -1,0 +1,48 @@
+.bannerSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  max-height: 500px;
+  width: 100%;
+  gap: 5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.bannerSection > div:first-child {
+    flex: 6;
+}
+
+.bannerSection > div:last-child {
+    flex: 4;
+}
+
+.bannerSection h2 {
+  font-size: 3rem;
+  line-height: 1.2em;
+  margin-bottom: 1rem;
+  text-align: left;
+  text-wrap: wrap;
+}
+
+
+.bannerSection p {
+  font-size: 1.2rem;
+  line-height: 1.3em;
+  margin-bottom: 1rem;
+  text-align: left;
+  text-wrap: wrap;
+  width: 70%;
+  margin-bottom: 2rem;
+}
+
+.bannerSection > div > div {
+    margin-top: 50px;
+}
+
+
+
+.bannerSection > div:last-child > img  {
+    width: 100%;
+}

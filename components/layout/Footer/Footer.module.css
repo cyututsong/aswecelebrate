@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 100vw;
+    width: 100%;
     gap: 5rem;
 }
 
@@ -28,7 +28,7 @@
     margin-bottom: 1rem;
 }
 
-.FooterContentContainer > div:nth-child(1) > img {
+.FooterContentContainer > div:nth-child(1) a > img {
     margin-bottom: 1rem;
 }
 
@@ -63,8 +63,65 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     padding-top: 2rem;
     border-top: 0.5px solid #ccc;
     font-size: 0.9rem;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .footer {
+        padding: 50px 20px 20px 20px;
+    }
+  
+    .FooterContentContainer {
+        gap: 1rem;
+        flex-direction: column;
+    }
+
+    .FooterContentContainer h5 {
+        font-size: 1rem;
+    }
+    
+
+    .FooterContentContainer ul li a,  .FooterContentContainer p  {
+        font-size: 0.9rem;
+    }  
+    
+    .FooterContentContainer ul li a  {
+        margin-left: 0.5rem;
+    }     
+
+    .FooterContentContainer > div:nth-child(1) {
+        width: 100%;
+    }
+
+    .FooterContentContainer > div:nth-child(1) {
+        width: 100%;
+    }
+
+    .FooterContentContainer > div:not(:first-child) {
+        width: 100%;;
+    }
+
+    .FooterContentContainer > div:nth-child(2) li {
+        margin-bottom: 0.5rem;
+    }
+
+    .FooterContentContainer > div {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .FooterContentContainer > div:last-child {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: none
+    }
+
+
+
 }

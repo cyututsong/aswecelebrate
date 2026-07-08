@@ -22,6 +22,9 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: 'As We Celebrate',
   description: 'Your one-stop destination for event planning, offering a curated selection of templates, venues, and expert advice to make your celebration unforgettable.',
+  icons: {
+    icon: "image/favicon.png",
+  },
 }
 
 

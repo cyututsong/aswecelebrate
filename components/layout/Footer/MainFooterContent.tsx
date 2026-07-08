@@ -20,15 +20,16 @@ export default function MainFooterContent(){
             <div className={style.FooterContentContainer}>
 
                 <div>
-                    <Image
-                        src="/image/ASWECELEBRATE-LOGO-BLACK.png"
-                        alt="As We Celebrate Logo"
-                        width={257}
-                        height={40}
-                        loading="eager"
-                        style={{ width: '257px', height: 'auto' }}
-                    />
-
+                    <Link href="/">
+                        <Image
+                            src="/image/ASWECELEBRATE-LOGO-BLACK.png"
+                            alt="As We Celebrate Logo"
+                            width={257}
+                            height={40}
+                            loading="eager"
+                            style={{ width: '257px', height: 'auto' }}
+                        />
+                    </Link>
                     <p> Beautiful wedding website designed to make your special day truly unforgettable! 💍✨</p>
                 </div>
                 <div>
@@ -47,10 +48,10 @@ export default function MainFooterContent(){
                     <h5>Follow Us</h5>
                     <ul>
                         <li>
-                            <a href="#" target="_blank">                               
+                            <Link href="https://www.facebook.com/profile.php?id=61588256633294#" target="_blank">                               
                                 <FaFacebookF size={20} />
                                 <span className="elementor-icon-list-text">Facebook</span>
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -58,16 +59,16 @@ export default function MainFooterContent(){
                     <h5>Contact Us</h5>
                     <ul>
                         <li>
-                            <a href="tel:+639650371441" target="_blank">
+                            <Link href="tel:+639650371441" target="_blank">
                                 <FaPhone size={20} />                             
                                     <span className="elementor-icon-list-text">+63 965 037 1441</span>
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a href="mailto:info@aswecelebrate.com" target="_blank">
+                            <Link href="mailto:info@aswecelebrate.com" target="_blank">
                                <HiOutlineMail size={20} />                           
                                     <span className="elementor-icon-list-text">info@aswecelebrate.com</span>
-                            </a>
+                            </Link>
                         </li>                       
                     </ul>
                 </div>
