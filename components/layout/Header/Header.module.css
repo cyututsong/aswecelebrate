@@ -54,6 +54,7 @@
   .headerContent {
         flex-direction: row;
         align-items: center;
+        justify-content: flex-start;
   }
 
   .header {
@@ -64,15 +65,14 @@
     padding: .5rem 1rem;
   }
 
-  .logo img {
-      width: 150px !important;
-  }
-
-
   .logoImage {
     width: 150px;
     height: auto;
   }
 
+  .headerContent > div:nth-child(3) {
+    margin-left:auto;
+  }
 
 }
+

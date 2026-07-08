@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
+
 // Define the structure for our navigation items
 interface NavItem {
   label: string;
@@ -21,14 +23,13 @@ export default function HamburgerMenu() {
     { label: 'Venues', href: '/venues', hasSubmenu: true },
     { label: 'Journal', href: '/journal', hasSubmenu: true },
     { label: 'FAQ', href: '/faq', hasSubmenu: true },
-    { label: 'Contact Us', href: '/contact', hasSubmenu: true }
+    { label: 'Contact Us', href: '/contact-us', hasSubmenu: true }
   ];
 
 
   return (
-    <nav className="relativebg-white  border-b border-gray-200 px-4 py-3 flex items-center justify-between z-50 font-sans">
+    <nav className="relativebg-white px-2 py-2 flex items-center justify-between z-50 font-sans">
       
-      {/* Left side: Burger / Close Trigger & Brand Logo */}
       <div className="flex items-center space-x-3">
         <button
           onClick={toggleMenu}
@@ -67,8 +68,9 @@ export default function HamburgerMenu() {
           {/* Navigation Links List */}
           <ul className="flex flex-col">
             {mainNavItems.map((item, index) => (
+                      
               <li key={index} className="border-b border-gray-100 last:border-none">
-                <a
+                <Link
                   href={item.href}
                   onClick={toggleMenu}
                   className="flex items-center justify-between px-5 py-4 text-[16px] font-semibold text-gray-900 hover:bg-gray-50 transition"
@@ -80,20 +82,20 @@ export default function HamburgerMenu() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 5l7 7-7 7" />
                     </svg>
                   )}
-                </a>
+                </Link>
               </li>
             ))}
             
             {/* Account Management Actions */}
             <li className="px-5 pt-6 pb-2">
-              <a href="#login" className="text-[#ff2395] font-bold hover:underline block text-[16px]">
+              <Link href="#login" className="text-[#ff2395] font-bold hover:underline block text-[16px]">
                 Log in
-              </a>
+              </Link>
             </li>
             <li className="px-5 py-2">
-              <a href="#signup" className="text-[#ff2395] font-bold hover:underline block text-[16px]">
+              <Link href="#signup" className="text-[#ff2395] font-bold hover:underline block text-[16px]">
                 Sign up
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
