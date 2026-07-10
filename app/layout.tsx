@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
-import { EB_Garamond, Manrope } from 'next/font/google'
+import { Libre_Caslon_Text, Plus_Jakarta_Sans } from 'next/font/google'
 import "./globals.css";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
 
 
-const ebGaramond = EB_Garamond({
+const libreCaslonText = Libre_Caslon_Text({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-eb-garamond',
-  weight: ['400', '500', '600', '700', '800'],
-})
+  variable: '--font-libre-caslon',
+  weight: ['400', '700'], 
+});
 
-const manrope = Manrope({
+
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-manrope',
+  variable: '--font-plus-jakarta',
   weight: ['200', '300', '400', '500', '600', '700', '800'],
-})
+});
+
 
 export const metadata: Metadata = {
   title: 'As We Celebrate',
@@ -36,11 +38,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${ebGaramond.variable} ${manrope.variable} h-full antialiased`}> 
+      className={`${libreCaslonText.variable} ${plusJakartaSans.variable} h-full antialiased`}> 
       <body className="min-h-full flex flex-col" cz-shortcut-listen="true">
-      <Header />        
-        {children}
-      <Footer />    
+        <Header />
+        <main className="min-h-screen flex items-top flex-col">        
+          {children}
+        </main>
+        <Footer />    
       </body>  
     </html>
   );

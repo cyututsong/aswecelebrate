@@ -8,10 +8,6 @@
     gap: 50px;
 }
 
-.footer > div {
-    max-width: 1600px;
-}
-
 .FooterContentContainer {
     display: flex;
     justify-content: space-between;
@@ -19,7 +15,6 @@
     width: 100%;
     gap: 5rem;
 }
-
 
 .FooterContentContainer h5 {
     font-family: var(--font-body);
@@ -49,7 +44,6 @@
     margin-bottom: 0.5rem;
 }
 
-
 .FooterContentContainer > div:nth-child(3) li a, .FooterContentContainer > div:nth-child(4) li a {
     list-style: none;
     display: flex;
@@ -57,7 +51,6 @@
     align-items: center;
     margin-bottom: 0.5rem;
 }
-
 
 .bottomFooter {
     display: flex;

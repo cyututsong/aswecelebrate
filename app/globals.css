@@ -1,14 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --font-heading: var(--font-eb-garamond), 'EB Garamond', serif;
-  --font-body: var(--font-manrope), 'Manrope', sans-serif;
+  --font-heading: var(--font-libre-caslon), 'Libre Caslon Text', serif;
+  --font-body: var(--font-plus-jakarta), 'Manrope', sans-serif;
   --background: #ffffff;
   --foreground: #171717;
   --color-primary:#16404d;
-  --color-secondary-cta:#f;
+  --color-secondary-cta:#ffffff;
   --text-color-primary:#ffffff;
   --background-beige:#f6f3ec;
+  --background-beige-light:#f6f3ec;
 }
 
 body {
@@ -19,7 +20,22 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
-  font-weight: 600;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 1.7rem;
+}
+
+h4 {
+    font-size: 1.4rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,7 +55,30 @@ li, p, a, span {
   font-family: var(--font-body);
 }
 
+p {
+  font-size:14px;
+  line-height: 1.5em;
+  font-weight: 300;
+}
 
+section > div {
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+header > div, footer > div  {
+  max-width: 1300px;
+}
+
+.underlineHeading:after {
+    content: "";
+    border: 3px solid #9e07ff;
+    border-radius: 3px;
+    width: 50px;
+    display: flex;
+    margin: 20px auto 0px auto;
+}
 
 /* Cursor Trail Animations Effect - CSS*/
 
