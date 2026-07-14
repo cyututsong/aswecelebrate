@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Style from "./Home.module.css";
-import Ctabuttons from "@/components/ui/buttons/CtaButtons"
+import Ctabuttons from "@/components/ui/buttons/CtaButtons";
 import { LuMonitorSmartphone } from "react-icons/lu";
 import { FaVideo } from "react-icons/fa6";
 import { RiMultiImageLine } from "react-icons/ri";
 import { HiUsers } from "react-icons/hi2";
 import Link from 'next/link';
+import VenueProperty from "@/components/ui/widget/VenueProperty";
 
 const featuresItems = [
     { 
@@ -94,10 +95,10 @@ export default function Home() {
                   <div>
                       <h4>The Ethernal Collection</h4>
                       <p>A minimalist masterpiece featuring hand-pressed texture and gold leaf accents.</p>
-                  </div>
-                  <div>
-                    <span>Wedding</span>
-                    <span>Minimalist</span>
+                      <div className={Style.templateTag}>
+                        <span>Wedding</span>
+                        <span>Minimalist</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -105,7 +106,6 @@ export default function Home() {
               <div>
                 <div className={`${Style.weddingTemplate} ${Style.noirGala}`}>
                   <div>
-                      <span>New Release</span>
                   </div>
                   <div>
                       <h4>Noir Gala</h4>
@@ -116,7 +116,6 @@ export default function Home() {
 
                 <div className={`${Style.weddingTemplate} ${Style.botanicalMuse}`}>
                   <div>
-                      <span>New Release</span>
                   </div>
 
                   <div>
@@ -128,7 +127,24 @@ export default function Home() {
             </div>
 
         </div>
-      </section>     
+      </section>   
+
+
+      <section className={Style.venueSection}>
+        <div>
+            <div>
+              <h3>Premium Venues</h3>
+              <div>
+                <p>Handpciked destination for unforgettable moments.</p>
+                <Link href='#'><p>View All Templates</p></Link>
+              </div>
+            </div>
+
+            <VenueProperty />
+
+        
+        </div>
+      </section>    
 
     </>
   );
