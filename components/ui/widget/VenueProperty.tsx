@@ -1,9 +1,8 @@
 'use client';
-
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useRouter } from 'next/navigation'; // ✅ Import useRouter
+import { useRouter } from 'next/navigation';
 import { CiLocationOn } from "react-icons/ci";
 import { MdArrowOutward } from "react-icons/md";
 import Style from './Venue.module.css';

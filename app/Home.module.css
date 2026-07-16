@@ -108,6 +108,10 @@
 
 }
 
+.venueSection {
+  background-color:#f6f3ec;
+}
+
 .templateSection > div, .venueSection > div {
   display: flex;
   padding: 5rem 0;
@@ -222,3 +226,6 @@
   background-color: #feddb4;
 }
 
+.simplyStepSection {
+  position: relative;
+}
