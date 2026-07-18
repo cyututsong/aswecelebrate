@@ -1,11 +1,11 @@
-'use client';
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
-import { CiLocationOn } from "react-icons/ci";
-import { MdArrowOutward } from "react-icons/md";
-import Style from './Venue.module.css';
+'use client'
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+import { CiLocationOn } from "react-icons/ci"
+import { MdArrowOutward } from "react-icons/md"
+import Style from './Venue.module.css'
 
 // Define the type for a single venue
 interface Venue {

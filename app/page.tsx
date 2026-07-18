@@ -189,37 +189,49 @@ export default function Home() {
       </section>    
 
       <section className={`${Style.simplyStepSection} flex flex-col bg-[#fcf9f2]`}>
-          <div className="flex flex-col py-40">
+          <div className="relative flex flex-col py-40">
             <div className="flex flex-col justify-center items-center mb-25">
               <h2>Design for Modern Romance</h2>
               <p>We've refined event planning process into a seamless, stress-free journey.</p>
             </div>
-            <div className="flex flex-row justify-center items-center gap-20">
-                <div className="flex flex-col w-1/3 justify-center items-center gap-5 text-center">
-                    <div className={`${Style.simplyStepSection} bg-[#16404d] p-8 rounded-md`}>
-                      <MdOutlineDesignServices color="#ffffff" size={35} />
-                    </div>
-                    <h4>1. Design</h4>
-                    <p>Choose a template and customize the colors, fonts, and details to match your unique style.</p>
-                </div>
-                <div className="flex flex-col w-1/3 justify-center items-center gap-5 text-center">
-                    <div className={`${Style.simplyStepSection} bg-[#16404d] p-8 rounded-md`}>
-                      <IoIosShareAlt color="#ffffff" size={35} />
-                    </div>
-                    <h4>2. Share</h4>
-                    <p>Send your digital invitation instantly and launch your website with one-tap RSVP.</p>
-                </div>
-                <div className="flex flex-col w-1/3 justify-center items-center gap-5 text-center">
-                    <div className={`${Style.simplyStepSection} bg-[#16404d] p-8 rounded-md`}>
-                      <LuPartyPopper color="#ffffff" size={35}/>
+
+            <div className="relative flex flex-col">
+              <div className="flex flex-row justify-center items-center gap-20 z-20">
+                  <div className="flex flex-col w-1/3 justify-center items-center gap-5 text-center">
+                      <div className={`${Style.simplyStepSection} bg-[#16404d] p-8 rounded-md`}>
+                        <MdOutlineDesignServices color="#ffffff" size={35} />
                       </div>
-                    <h4>3. Celebrate</h4>
-                    <p>Track RSVPs, manage guest preferences, and send updates in real time.</p>
-                </div>
+                      <h4>1. Design</h4>
+                      <p className="px-6 pb-6">Choose a template and customize the colors, fonts, and details to match your unique style.</p>
+                  </div>
+                  <div className="flex flex-col w-1/3 justify-center items-center gap-5 text-center">
+                      <div className={`${Style.simplyStepSection} bg-[#16404d] p-8 rounded-md`}>
+                        <IoIosShareAlt color="#ffffff" size={35} />
+                      </div>
+                      <h4>2. Share</h4>
+                      <p className="px-6 pb-6">Send your digital invitation instantly and launch your website with one-tap RSVP.</p>
+                  </div>
+                  <div className="flex flex-col w-1/3 justify-center items-center gap-5 text-center">
+                      <div className={`${Style.simplyStepSection} bg-[#16404d] p-8 rounded-md`}>
+                        <LuPartyPopper color="#ffffff" size={35}/>
+                        </div>
+                      <h4>3. Celebrate</h4>
+                      <p className="px-6 pb-6">Track RSVPs, manage guest preferences, and send updates in real time.</p>
+                  </div>
+              </div>
+              <hr className="border-[#ddd] w-full absolute top-13 z-10"/>
             </div>
-            <hr className="border-x-teal-950 w-full"/>
+          </div>
+      </section> 
+
+
+
+      <section className="flex flex-col bg-[#16404d]">
+          <div className="relative flex flex-col py-40">
+
           </div>
       </section>            
+
 
     </>
   );
