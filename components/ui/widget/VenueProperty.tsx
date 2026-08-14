@@ -60,7 +60,6 @@ export default function VenueProperty({
               alt={venue.alt}
               width={600}
               height={600}
-              loading="eager"
               className={Style.venueImage}
             />
             <span className={Style.priceTag}>{venue.price}</span>

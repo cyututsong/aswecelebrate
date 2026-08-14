@@ -1,84 +1,33 @@
 import Image from "next/image";
 import Style from "./Home.module.css";
-import Ctabuttons from "@/components/ui/buttons/CtaButtons";
-import { LuMonitorSmartphone } from "react-icons/lu";
-import { FaVideo } from "react-icons/fa6";
-import { RiMultiImageLine } from "react-icons/ri";
-import { HiUsers } from "react-icons/hi2";
 import Link from 'next/link';
-import VenueProperty from "@/components/ui/widget/VenueProperty";
+
 import { MdOutlineDesignServices } from "react-icons/md";
 import { IoIosShareAlt } from "react-icons/io";
 import { LuPartyPopper } from "react-icons/lu";
+import GoogleTestimonial from "@/components/ui/widget/GoogleTestimonial";
+import VenueProperty from "@/components/ui/widget/VenueProperty";
+import Ctabuttons from "@/components/ui/buttons/CtaButtons";
+import SignupForm from "@/components/ui/widget/SignupForm";
+import { subscribeToNewsletter } from './actions';
 
-const featuresItems = [
-    { 
-      id:'device',
-      icon: <LuMonitorSmartphone size={30} />,
-      title: 'All Device View' ,
-      description: 'Optimized for seamless viewing on mobile, tablet, and desktop screens'
-    },
-    { 
-      id:'video',
-      icon: <FaVideo size={30} />,
-      title: 'Pre-Wedding Video' ,
-      description: 'Embed your cinematic love story directly into your digital invitation'
-    },
-    { 
-      id:'photos',
-      icon: <RiMultiImageLine size={30} />,
-      title: 'Prenup Photos' ,
-      description: 'Display your beautiful engagement gallery with elegant zoom-in effects.'
-    },
-    { 
-      id:'entrourage',      
-      icon: <HiUsers size={30} />,
-      title: 'The Entourage' ,
-      description: 'Showcase your support system with detailed bridal party profiles'
-    },
-];
+//data
+import { featuresItems } from '@/data/featureTempalteData';
+import { venuesData } from '@/data/venuesData';
+import { testimonialsData } from '@/data/testimonialsData';
 
-// Define your venue data
-const venueData = [
-  {
-    id: 1,
-    image: '/image/venue-1.png',
-    alt: 'Venue Number 1',
-    price: '₱25,000+',
-    location: 'Tagaytay, City',
-    name: 'Villa del Sogno',
-    guests: 'Up to 150 guests'
-  },
-  {
-    id: 2,
-    image: '/image/venue-2.png',
-    alt: 'Venue Number 2',
-    price: '₱25,000+',
-    location: 'Tagaytay, City',
-    name: 'Villa del Sogno',
-    guests: 'Up to 150 guests'
-  },
-  {
-    id: 3,
-    image: '/image/venue-3.jpg',
-    alt: 'Venue Number 3',
-    price: '₱25,000+',
-    location: 'Tagaytay, City',
-    name: 'Villa del Sogno',
-    guests: 'Up to 150 guests'
-  },
-  {
-    id: 4,
-    image: '/image/venue-3.jpg',
-    alt: 'Venue Number 4',
-    price: '₱25,000+',
-    location: 'Tagaytay, City',
-    name: 'Villa del Sogno',
-    guests: 'Up to 150 guests'
-  }
-];
+
 
 export default function Home() {
+
+  const customValidate = (email: string): boolean => {
+    return email.endsWith('@company.com') && email.length > 10;
+  };
+
+  const handleSubmit = async (email: string): Promise<void> => {
+    console.log('Valid email:', email);
+  };
+
   return (
     <>
       <section className={Style.bannerSection}>
@@ -183,7 +132,7 @@ export default function Home() {
             </div>
 
             <VenueProperty 
-              venues={venueData}
+              venues={venuesData}
             />
         </div>
       </section>    
@@ -228,10 +177,29 @@ export default function Home() {
 
       <section className="flex flex-col bg-[#16404d]">
           <div className="relative flex flex-col py-40">
-
+            <GoogleTestimonial testimonials={testimonialsData} />
           </div>
       </section>            
 
+      <section className="flex flex-col bg-[#fff] py-40 ">
+          <div className=" flex bg-[#f6f3ec] justify-center items-center w-1/2 justify-center items-center ">
+          <div className="flex flex-col py-40 w-1/2 items-center justify-center">
+              <h2>Join the Inner Circle</h2>
+              <p>Get exclusive first access to new template and limited venue availability your inbox.</p>
+
+              <SignupForm 
+                onSubmit={subscribeToNewsletter}  // ✅ Server Action
+                buttonText="Subscribe"
+                buttonColor="green"
+                successMessage="Successfully subscribed!"
+                errorMessage="Failed to subscribe. Please try again."
+              />
+          </div>
+
+          </div>
+
+      </section>     
+     
 
     </>
   );
