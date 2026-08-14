@@ -1,16 +1,16 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next';
 
-const nextConfig = {
+const config: NextConfig = {
+  output: "standalone",
   images: {
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'www.weddingwire.com',
-        pathname: '/**', // Allows all image paths from this domain
+        pathname: '/**',
       },
     ],
-  },
+  }
 };
 
-
-export default nextConfig;
+export default config;
