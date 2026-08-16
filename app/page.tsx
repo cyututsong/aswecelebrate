@@ -31,11 +31,12 @@ export default function Home() {
   return (
     <>
       <section className={Style.bannerSection}>
+        <div className={Style.overlaySection}></div>
         <div>
           <div>
-            <h2>Seamless Online Invitations for Your Perfect Wedding Celebration</h2>
+            <h2>Seamless Invitation for <i>Perfect Wedding</i> Celebration</h2>
             <p>Save time and money with a stunning wedding website that beautifully tells your story. Fully customizable, stress-free, and ready to share instantly.</p>
-            <Ctabuttons />
+            <div className={Style.ctaButtons}><Link href='#'><button>Let's Make Your Invitation</button></Link><Link href='#'><button>View All Templates</button></Link></div>
           </div>
           <div>
             <Image
@@ -175,8 +176,9 @@ export default function Home() {
 
 
 
-      <section className="flex flex-col bg-[#16404d]">
+      <section className="flex flex-col bg-[#f8fafc]">
           <div className="relative flex flex-col py-40">
+            <h2 className="text-3xl font-bold text-center mb-10">What our clients say</h2>
             <GoogleTestimonial testimonials={testimonialsData} />
           </div>
       </section>            

@@ -1,25 +1,23 @@
 import type { Metadata } from "next";
-import { Libre_Caslon_Text, Plus_Jakarta_Sans } from 'next/font/google'
+import { Playfair_Display, Poppins } from 'next/font/google'
 import "./globals.css";
 import Header from "@/components/layout/Header/Header";
 import Footer from "@/components/layout/Footer/Footer";
 
 
-const libreCaslonText = Libre_Caslon_Text({
+const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-libre-caslon',
-  weight: ['400', '700'], 
+  variable: '--font-playfair-display',
+  weight: ['400', '500', '600', '700'],
 });
 
-
-const plusJakartaSans = Plus_Jakarta_Sans({
+const poppins = Poppins({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-plus-jakarta',
-  weight: ['200', '300', '400', '500', '600', '700', '800'],
+  variable: '--font-poppins',
+  weight: ['300', '400', '500', '600', '700'],
 });
-
 
 export const metadata: Metadata = {
   title: 'As We Celebrate',
@@ -38,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${libreCaslonText.variable} ${plusJakartaSans.variable} h-full antialiased`}> 
+      className={`${playfairDisplay.variable} ${poppins.variable} h-full antialiased`}> 
       <body className="min-h-full flex flex-col" cz-shortcut-listen="true">
         <Header />
         <main className="min-h-screen flex items-top flex-col">        

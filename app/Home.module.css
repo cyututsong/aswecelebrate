@@ -1,14 +1,35 @@
 .bannerSection {
-  background-color: #f7f9ff;
+  background:url('/image/dummy-banner-2.jpg');
+  background-size:cover;
+  background-position:center center;
+  height: 100vh;
+  position: relative;
+  padding: 50px;
 }
 
-.bannerSection > div {
+.overlaySection {
+    background: linear-gradient(90deg, #fff 40% 20%, #0000);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ctaButtons {
+  display: flex;
+  gap:7px;
+}
+
+.bannerSection > div:last-child {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
   max-height: 600px;
   gap: 5rem;
+  z-index: 10;
 }
 
 .bannerSection div > div:first-child {
@@ -20,7 +41,7 @@
 }
 
 .bannerSection h2 {
-  font-size: 3rem;
+  font-size: 4.5rem;
   line-height: 1.2em;
   margin-bottom: 1rem;
   text-align: left;
@@ -34,7 +55,7 @@
   margin-bottom: 1rem;
   text-align: left;
   text-wrap: wrap;
-  width: 70%;
+  width: 90%;
   margin-bottom: 2rem;
 }
 

@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
 :root {
-  --font-heading: var(--font-libre-caslon), 'Libre Caslon Text', serif;
-  --font-body: var(--font-plus-jakarta), 'Manrope', sans-serif;
   --background: #ffffff;
   --foreground: #171717;
   --color-primary:#16404d;
@@ -14,13 +12,17 @@
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
   background: var(--background);
   color: var(--foreground);
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-playfair-display), 'Playfair Display', serif;
+}
+
+h6 {
+  font-family: var(--font-poppins), 'Poppins', sans-serif;
 }
 
 h1 {
