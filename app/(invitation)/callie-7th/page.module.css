@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@font-face {
+  font-family: 'sabalon';
+  src: url('../../../src/assets/fonts/sabalon.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+.BannerSection  {
+    background: radial-gradient(circle, #9881c3, #8570b7, #434e92);
+}
+
+.BannerSection h2 {
+    font-family: "Sacramento", cursive;
+    font-size: 7rem;
+    margin-bottom: -100px;
+    z-index: 10;
+}
+
+.BannerSection h3 {
+    font-family: 'sabalon', sans-serif;
+    font-size: 16rem;
+    color: #000;   
+    margin-bottom: -130px;    
+}
+
+.BannerSection h4 {
+    font-family: 'sabalon', sans-serif;
+    font-size: 3rem;
+    color: #000;   
+    margin-bottom: 0px;    
+}
+
+
+.BannerSection p {
+  font-family: "Carlito", sans-serif;
+  font-size: 1.5rem;
+  width: 80%;
+}
+
+
+.BannerSection {
+    display: flex;
+    height: 1000px;
+    overflow: hidden;
+}
+
+.BannerSection > div:first-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+.BannerSection sub  {
+    font-size: 0.9rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.2rem 2rem 0.3rem;
+    border-radius: 100px;
+    line-height: 1.2em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+
+.BannerSection > div:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+
+.cardStack {
+  position: relative;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 28px;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.5s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 0 18px rgba(255, 255, 255, 0.18),
+    0 12px 28px rgba(13, 74, 91, 0.22);
+  filter: saturate(1.05) brightness(1.02);
+  animation: glassShimmer 4s ease-in-out infinite;
+  will-change: filter, box-shadow;
+}
+
+.card::after {
+  position: absolute;
+  inset: -30% auto -30% -75%;
+  width: 45%;
+  content: '';
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 35%,
+    rgba(255, 255, 255, 0.78) 50%,
+    rgba(255, 255, 255, 0.08) 65%,
+    transparent 100%
+  );
+  transform: skewX(-20deg) translateX(-180%);
+  animation: glossSweep 4.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.cardImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+
+
+.cardTop {
+  transform: translate(-50%, -50%) rotate(0deg);
+  z-index: 3;
+}
+
+.cardMiddle {
+  transform: translate(-50%, -50%) rotate(-10deg);
+  z-index: 2;
+}
+
+.cardBottom {
+  transform: translate(-50%, -50%) rotate(10deg);
+  z-index: 1;
+}
+
+
+.BannerSection:hover .cardTop {
+  transform: scale(1.1) translate(-50%, -50%) rotate(0deg);
+}
+
+.BannerSection:hover .cardMiddle {
+  transform: scale(1.1) rotate(-30deg) translate(-60%, -80%);
+}
+
+.BannerSection:hover .cardBottom {
+  transform: scale(1.1) rotate(30deg) translate(-20%, -50%);
+}
+
+
+.BannerSection button {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    cursor: pointer;
+    background: #ffffff26;
+    border: 1px solid #ffffff4d;
+    border-radius: 9999px;
+    outline: none;
+    padding: 14px 36px;
+    font-family: sabalon, sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    transition: all .3s;
+    box-shadow: 0 8px 32px #0003, inset 0 1px 1px #fff6;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+
+/* Hover effect */
+.BannerSection button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3),
+              inset 0 1px 2px 0 rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Click/Active effect */
+.BannerSection button:active {
+  transform: translateY(0);
+}
+
+
+
+/* CountDown Section */
+
+
+.countDownSection  {
+  padding: 5rem 2rem;
+}
+
+.countDownSection h2 {
+    font-family: "Sacramento", cursive;
+    font-size: 5rem;
+    margin-bottom: 20px;
+    z-index: 10;
+}
+
+.countDownSection p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin:0 auto 20px auto;
+    width: 70%;
+    text-wrap: pretty;
+}
+
+
+.countDownSection h4 {
+    font-size: 2rem;
+    text-align: center;
+    margin:0 auto 20px auto;
+    width: 70%;
+    text-wrap: pretty;
+}
+
+.parallaxGallerySection > div {
+    max-width: 100%;
+  }
+
+@keyframes glassShimmer {
+  0%,
+  100% {
+    filter: saturate(1.05) brightness(1.02);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.8),
+      inset 0 0 18px rgba(255, 255, 255, 0.18),
+      0 12px 28px rgba(13, 74, 91, 0.22);
+  }
+
+  50% {
+    filter: saturate(1.2) brightness(1.1);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 1),
+      inset 0 0 24px rgba(255, 255, 255, 0.38),
+      0 16px 36px rgba(13, 74, 91, 0.3);
+  }
+}
+
+@keyframes glossSweep {
+  0%,
+  18% {
+    transform: skewX(-20deg) translateX(-180%);
+  }
+
+  55%,
+  100% {
+    transform: skewX(-20deg) translateX(520%);
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    animation: none;
+  }
+
+  .card::after {
+    animation: none;
+  }
+}
