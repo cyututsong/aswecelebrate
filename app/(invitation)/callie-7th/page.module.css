@@ -12,7 +12,7 @@
     background: radial-gradient(circle, #9881c3, #8570b7, #434e92);
 }
 
-.BannerSection h2 {
+.BannerSection h2  {
     font-family: "Sacramento", cursive;
     font-size: 7rem;
     margin-bottom: -100px;
@@ -225,7 +225,182 @@
 
 .parallaxGallerySection > div {
     max-width: 100%;
-  }
+}
+
+
+.venueSection h2 {
+    font-family: "Sacramento", cursive;
+    font-size: 7rem;
+    margin-bottom: -50px;
+    z-index: 10;
+}
+
+.venueSection h3 {
+    font-size: 2.5rem;
+}
+
+.venueSection p {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+}
+
+
+.sevenTraditionSection {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+
+.sevenTraditionSection > div {
+  display:flex;
+  flex-wrap: wrap;
+  gap:5rem 2rem;
+}
+
+.sevenTraditionSection > div > div {
+  width: 31%;
+}
+
+
+.sevenTraditionSection h2 {
+    margin-bottom: 50px;
+}
+
+.sevenTraditionSection ul, .sevenTraditionSection li, .sevenTraditionSection h3 {
+   text-align: center;
+}
+
+.sevenTraditionSection h3 {
+   text-align: center;
+   margin-bottom:20px;
+}
+
+.sevenTraditionSection li {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.gallerySection {
+  padding: 50px 0;
+}
+
+.dressCodeSection {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.dressCodeSection h2 {
+    font-family: "Sacramento", cursive;
+    font-size: 7rem;
+    margin-bottom: -50px;
+    z-index: 10;
+}
+
+.dressCodeSection h3 {
+    font-size: 2.5rem;
+}
+
+.dressCodeSection p {
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+}
+
+
+.faqSection {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+  gap:20px 20px;
+}
+
+.faqSection h2 {
+    font-family: "Sacramento", cursive;
+    font-size: 7rem;
+    margin-bottom: 50px;
+    z-index: 10;
+}
+
+.faqSection h3 {
+    font-size: 2.5rem;
+}
+
+.faqSection p {
+    font-size: 1.5rem;
+    margin-bottom: 0px;
+}
+
+.accordion {
+  max-width: 600px;
+  width: 100vw;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.accordionItem {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.accordionItem:last-child {
+  border-bottom: none;
+}
+
+.accordionHeader {
+  padding: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background-color: #f8fafc;
+  list-style: none; /* Hides default marker */
+  position: relative;
+}
+
+/* Custom arrow indicator */
+.accordionHeader::after {
+  content: '▼';
+  font-size: 12px;
+  float: right;
+  transition: transform 0.2s ease;
+}
+
+.accordionItem[open] .accordionHeader::after {
+  transform: rotate(180deg);
+}
+
+.accordionContent {
+  padding: 16px;
+  background-color: #ffffff;
+  color: #334155;
+}
+
+
+.rsvpSection {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0 150px 0;
+  gap:20px 20px;
+}
+
+.rsvpSection h2 {
+    font-family: "Sacramento", cursive;
+    font-size: 7rem;
+    margin-bottom: -50px;
+    z-index: 10;
+}
+
+.rsvpSection p {
+    font-size: 1.5rem;
+    margin-bottom: 50px;  
+}
+
+
 
 @keyframes glassShimmer {
   0%,
