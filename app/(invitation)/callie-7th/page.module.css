@@ -15,6 +15,18 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+    overflow-x: hidden;
+}
+
+.displayDestop {
+  display: block;
+}
+
+.displayMobile {
+  display: none;
+}
+
 
 .gradientText {
   /* Apply your multi-stop linear gradient */
@@ -685,6 +697,14 @@ body p, body li {
 
 @media only screen and (max-width: 600px) {
 
+  .displayDestop {
+    display: none;
+  }
+
+  .displayMobile {
+    display: block;
+  }
+
   .waveTop {
       top: -70px !important;
       left: -50px !important;
@@ -751,6 +771,7 @@ body p, body li {
 
   .oceanBottom {
       height: 180px;
+      bottom: 0!important;
       background-size: cover;
   }
 
@@ -805,8 +826,16 @@ body p, body li {
 
   .countDownSection h2 {
       width: 100%;
-      font-size: 2.5rem;
+      font-size: 3.5rem;
   }
+
+  .countDownSection p {
+      width: 100%;
+      text-align: center;
+      color:#000;
+      font-size: 1.3rem;
+  }
+
 
   .venueSection {
     padding: 5rem 2rem;
@@ -824,12 +853,6 @@ body p, body li {
       text-align: center;
       line-height: 0.9em;
       margin-bottom: 0px;
-  }
-
-  .countDownSection p {
-      width: 100%;
-      text-align: center;
-      color:#000;
   }
 
   .venueSection p {
@@ -934,6 +957,9 @@ body p, body li {
   .parallaxGallerySection .h-screen {
     height: 60vh!important;
   }
+
+
+
 
 
 

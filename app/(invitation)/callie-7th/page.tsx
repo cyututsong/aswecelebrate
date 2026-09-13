@@ -37,17 +37,17 @@ import RsvpForm from '@/components/forms/callie/RsvpForm';
 import OceanBubbles from '@/components/ui/effects/ocean/OceanBubbles';
 import {CardCarousel} from '@/components/ui/cardcarousel/CardCadrousel'
 import Link from 'next/link';
+import {MusicPlayer} from '@/components/ui/musicplayer/MusicPlayer';
 
-const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
 
 const debutantImages = [
-  callie15,
+  callie10,
   callie5,
   callie12,
   callie13,  
   callie4,
   callie7,
-  callie10,
+  callie15,
   callie11,
   callie9,
   callie6,  
@@ -68,7 +68,7 @@ const mansoryImages: MasonryItem[] = [
 ];
 
 const sevenRoses = [
-  "Matteo De Guzman",
+  "Matteo Nicolas De Guzman",
   "Dwayne Francis Crisologo",
   "Jude Crisologo",
   "Ninong Leodee John Amar",
@@ -78,10 +78,10 @@ const sevenRoses = [
 ]
 
 const sevenBills = [
-    "Tita Jeanette Perry",
+    "Kevin Charles Bancod",
     "Ninang Mary Grace Vidal",
     "Ninang Anelor Endriga",
-    "Ninang Anelor Endriga",
+    "Ninang Gretchen Pamilaran",
     "Ate Scarlette Jayda Francisco",
     "Judaea Estrelle Crisologo",
     "Ninang Irish Mae Cruz"  
@@ -101,14 +101,14 @@ const sevenCandles = [
     "Nanay Wena",
     "Lola Ising",
     "Tita P & Ninang Julie",
-    "Tita Etel",
+    "Tita Etel & Ate JJ",
     "Ninang Kim & Ninang Pedi",
-    "Ninang Michelle",
-    "Ninang Cyrrah"  
+    "Ninang Michelle Pagurayan",
+    "Ninang Cyrrah & Ninang Sam"  
 ];
 
 const sevenBallons = [
-    "Gideon Cabrera",
+    "Joshtine Kiel Jamandri",
     "Kahel Naithan Mata",
     "Gabriel Liam Fontanilla",
     "Jaeden Sto. Nino",
@@ -120,11 +120,11 @@ const sevenBallons = [
 const sevenToys = [
     "Diane Francine Crisologo",
     "Jaxianna Kiersten Santiago",
-    "Judaea Estrella Crisologo",
+    "Gideon Cabrera",
     "Zackiesha Amber Dacara",
     "Summer Ayanah Dacara",
-    "Self Espiritu",
-    "Solei Margaux Sta. Maria"  
+    "Seff Espiritu",
+    "Soleil Margaux Sta. Maria"  
 ];
 
 const sevenSweetTreats = [
@@ -214,6 +214,13 @@ export default function Callie() {
         {/* Floating Ocean Air Bubbles */}
         <OceanBubbles count={30} />  
 
+        <MusicPlayer
+          audioSrc="/music/under-the-sea.mp3"
+          title="Under the Sea"
+          subtitle="Callie's 7th Birthday"
+          autoPlay={true}
+        />
+
 
         <section className={`${Style.BannerSection} flex flex-row p-20`}>
 
@@ -242,7 +249,7 @@ export default function Callie() {
          <div>
 
                 <div className="w-1/2 flex flex-col">
-                  {!isMobile && <sub>YOU ARE INVITED</sub>}
+                  <sub className={Style.displayDestop}>YOU ARE INVITED</sub>
                   <h2 className={Style.gradientText}>Jewel Callie Rae</h2>
                   <h3 >7th</h3>
                   <h4>Birthday Celebration</h4>
@@ -251,7 +258,7 @@ export default function Callie() {
                 </div>
 
                 {/* Stack Container */}
-                {isMobile && <sub>YOU ARE INVITED</sub>}
+                <sub className={Style.displayMobile}>YOU ARE INVITED</sub>
                 <div className={`${Style.cardStack} flex items-center justify-center w-1/2 flex flex-col`}>  
                   
                   {/* Bottom Card (callie3) - Rotated Right */}
@@ -327,11 +334,10 @@ export default function Callie() {
             variant="bubble" 
           />
 
-
         </section>
 
-        {!isMobile && 
-          <section className={`${Style.parallaxGallerySection} flex flex-col`} >
+
+          <section className={`${Style.parallaxGallerySection} ${Style.displayDestop} flex flex-col`} >
 
             <ParallaxGallery 
                   images={debutantImages}
@@ -339,11 +345,8 @@ export default function Callie() {
             />
 
           </section>
-        }
 
-
-        {isMobile && 
-         <section className={`${Style.parallaxGallerySection} flex flex-col`} >
+         <section className={`${Style.parallaxGallerySection} ${Style.displayMobile} flex flex-col`} >
             <div className="flex h-screen items-center justify-center bg-[#f5f4f3]">
                   <CardCarousel
                     items={debutantImages}
@@ -352,7 +355,7 @@ export default function Callie() {
                   />
             </div>
          </section>
-        }
+  
 
         <section className={`${Style.venueSection} relative flex flex-col items-center justify-center min-h-[200px] overflow-hidden p-20`} >
 
@@ -612,9 +615,7 @@ export default function Callie() {
 
         </section>
 
-        <section className={`w-full ${Style.oceanBottom}`}>
-                
-                
+        <section className={`w-full ${Style.oceanBottom}`}>     
         </section>
 
     </>

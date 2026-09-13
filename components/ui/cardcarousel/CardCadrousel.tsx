@@ -71,7 +71,7 @@ export const CardCarousel: React.FC<CardCarouselProps> = ({
       initial={initial}
       animate={animate}
       transition={transition}
-      className={cn("relative w-full max-w-3xl", className)}
+      className={cn("relative w-full max-w-full overflow-hidden px-4 flex justify-center items-center", className)}
       {...motionProps}
     >
       <style>{`
@@ -86,6 +86,11 @@ export const CardCarousel: React.FC<CardCarouselProps> = ({
         effect="cards"
         grabCursor={true}
         loop={loop}
+        cardsEffect={{
+          perSlideOffset: 8, // Reduce side displacement of background cards
+          perSlideRotate: 2, // Reduce rotation angle so cards stay within screen
+          slideShadows: false, // Prevents overflow shadow artifacts on mobile
+        }}
         pagination={showPagination ? { clickable: true } : false}
         navigation={
           showNavigation
@@ -95,8 +100,7 @@ export const CardCarousel: React.FC<CardCarouselProps> = ({
               }
             : false
         }
-        /* Updated height class here */
-        className={cn("card-swiper-container h-[60vh] w-[260px]", cardClassName)}
+        className={cn("card-swiper-container h-[50vh] min-h-[320px] max-h-[500px] w-[75vw] max-w-[280px]", cardClassName)}
         modules={[EffectCards, Autoplay, Pagination, Navigation]}
       >
         {items.map((item, index) => (
