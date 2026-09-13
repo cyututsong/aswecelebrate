@@ -302,9 +302,10 @@ body p, body li {
 }
 
 .venueSection h4 {
+    color:#000;
     font-size: 2.5rem;
     font-family: "Bubblegum Sans", sans-serif;
-    margin-bottom: -20px;
+    margin-bottom: 20px;
 }
 
 .venueSection h2 {
@@ -315,9 +316,13 @@ body p, body li {
 }
 
 .venueSection p {
+    color:#000;
     font-size: 1.5rem;
-    margin-bottom: 50px;
     font-weight: 500;
+}
+
+.venueSection iframe {
+    margin-top:50px;
 }
 
 
@@ -397,6 +402,7 @@ body p, body li {
 
 .gallerySection {
   padding: 50px 0;
+  background-color: #fff;
 }
 
 .dressCodeSection {
@@ -426,6 +432,7 @@ body p, body li {
     font-weight: 500;
     width: 40%;
     text-align: center;
+    color:#000;
 }
 
 
@@ -464,6 +471,10 @@ body p, body li {
     margin-bottom: 0px;
 }
 
+.accordionHeade {
+  color:#000;
+}
+
 .rsvpSection {
   display:flex;
   flex-direction: column;
@@ -488,6 +499,7 @@ body p, body li {
     width: 30%;
     text-align: center;
     margin-bottom: 10px;
+    color:#000;
 }
 
 
@@ -796,18 +808,14 @@ body p, body li {
       font-size: 2.5rem;
   }
 
-  .countDownSection p {
-      width: 100%;
-  }
-
-
   .venueSection {
     padding: 5rem 2rem;
     background: #fff;
   }
 
   .venueSection h4 {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
+    color: #000;
   }
 
   .venueSection h2 {
@@ -821,6 +829,7 @@ body p, body li {
   .countDownSection p {
       width: 100%;
       text-align: center;
+      color:#000;
   }
 
   .venueSection p {
@@ -851,7 +860,7 @@ body p, body li {
       color: #000;
       text-shadow: 0 0 12px #fff6;
       font-family: sabalon, sans-serif;
-      font-size: 5rem;
+      font-size: 4rem;
       text-align: center;
       line-height: 0.9em;
   }  

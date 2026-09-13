@@ -197,7 +197,7 @@ const sampleSpeakers: ShowcaseItem[] = [
 ];
 
 
-const handleScrollToRSVP = (e) => {
+const handleScrollToRSVP = (e:any) => {
   e.preventDefault();
   const element = document.getElementById('rsvp');
   if (element) {
@@ -343,10 +343,9 @@ export default function Callie() {
 
         <section className={`${Style.venueSection} relative flex flex-col items-center justify-center min-h-[200px] overflow-hidden p-20`} >
 
-          <h4>The Venue</h4>
+          <h4>Event Details</h4>
+          <p>Saturday September 26, 2026 5:00pm</p>
           <h2 className={Style.gradientText}>Casa Prinza</h2>
-
-
           <p>G6P9+G3W, F. Gonzales Street, Teresa, Rizal</p>
 
           <iframe 
