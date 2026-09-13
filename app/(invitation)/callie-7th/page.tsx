@@ -70,7 +70,7 @@ const mansoryImages: MasonryItem[] = [
 const sevenRoses = [
   "Matteo Nicolas De Guzman",
   "Dwayne Francis Crisologo",
-  "Jude Crisologo",
+  "Tito Jude Crisologo",
   "Ninong Leodee John Amar",
   "Ninong Davies John Cruz",
   "Lolo Ben Crisologo",
@@ -360,7 +360,7 @@ export default function Callie() {
         <section className={`${Style.venueSection} relative flex flex-col items-center justify-center min-h-[200px] overflow-hidden p-20`} >
 
           <h4>Event Details</h4>
-          <p>Saturday, September 26, 2026 5:00pm</p>
+          <p>Saturday, September 26, 2026 3:00pm</p>
           <h2 className={Style.gradientText}>Casa Prinza</h2>
           <p>G6P9+G3W, F. Gonzales Street, Teresa, Rizal</p>
 
@@ -525,7 +525,7 @@ export default function Callie() {
 
               <h4>Dress Code</h4>
               <h2 className={Style.gradientText}>Casual attire</h2>
-              <p>Or anything you’re comfortable wearing. You can also bring a swimsuit if you’d like to swim.</p>
+              <p>Or anything you’re comfortable wearing. Feel free to bring swimwear if you’d like to take a swim.</p>
 
               <Image 
                 src={dresscode} 
