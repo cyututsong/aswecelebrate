@@ -669,132 +669,248 @@ body p, body li {
 
 @media only screen and (max-width: 600px) {
 
-.waveTop {
-    top: -70px !important;
-    left: -50px !important;
-}
+  .waveTop {
+      top: -70px !important;
+      left: -50px !important;
+  }
 
 
-.BannerSection {
-  flex-direction: column;
-  padding-top: 200px;
-  padding-bottom: 300px;
-  height: 1500px;
-}
-
-.BannerSection > div:nth-child(2) {
+  .BannerSection {
     flex-direction: column;
-    margin-top: 300px;
-    margin-bottom: 350px;
-}
+    padding-top: 200px;
+    padding-bottom: 300px;
+    height: 1500px;
+  }
 
-.BannerSection > div:nth-child(2) > div:nth-child(1) {
-    width: 100%;
-}
+  .BannerSection > div:nth-child(2) {
+      flex-direction: column;
+      margin-top: 300px;
+      margin-bottom: 350px;
+  }
 
-.BannerSection sub {
-    font-family: sabalon, sans-serif;
-    font-size: 1.5rem;
-    line-height: 1em;
-    width: 70%;
-    margin: 0 auto;
-}
+  .BannerSection > div:nth-child(2) > div:nth-child(1) {
+      width: 100%;
+  }
 
-.BannerSection h2 {
-    font-size: 4.5rem;
-    line-height: 1em;
-    margin-bottom: -50px;
-}
+  .BannerSection sub {
+      font-family: sabalon, sans-serif;
+      font-size: 1.5rem;
+      line-height: 1em;
+      width: 70%;
+      margin: 0 auto;
+  }
 
-.BannerSection h3 {
-    color: #000;
-    margin-bottom: -50px;
-    font-family: sabalon, sans-serif;
-    font-size: 8rem;
-}
+  .BannerSection h2 {
+      font-size: 4.5rem;
+      line-height: 1em;
+      margin-bottom: -50px;
+  }
 
-.BannerSection h4 {
-    font-size: 3rem;
-    line-height: 1em;
-}
+  .BannerSection h3 {
+      color: #000;
+      margin-bottom: -50px;
+      font-family: sabalon, sans-serif;
+      font-size: 8rem;
+  }
 
-.BannerSection {
-    padding-left: 20px;
-    padding-right: 20px;
-}
+  .BannerSection h4 {
+      font-size: 3rem;
+      line-height: 1em;
+  }
 
-.BannerSection > div:nth-child(2)  {
-    padding-left: 0px;
-    padding-right: 0px;
-}
+  .BannerSection {
+      padding-left: 20px;
+      padding-right: 20px;
+  }
 
-.BannerSection p {
-    font-size: 1.3rem;
-    color: #000;
-}
+  .BannerSection > div:nth-child(2)  {
+      padding-left: 0px;
+      padding-right: 0px;
+  }
 
-.oceanBottom {
-    height: 180px;
-    background-size: cover;
-}
+  .BannerSection p {
+      font-size: 1.3rem;
+      color: #000;
+  }
 
-.cardStack {
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    padding: 150px 0px;
-}
+  .oceanBottom {
+      height: 180px;
+      background-size: cover;
+  }
 
-.BannerSection > div:nth-child(2) > div:nth-child(1) {
-  order:2;
-}
+  .cardStack {
+      position: relative;
+      width: 100%;
+      height: 50vh;
+  }
 
-.BannerSection p {
-    width: 80%;
-    font-size: 1.2rem;
-    line-height: 1.2em;
-}
+  .BannerSection > div:nth-child(2) > div:nth-child(1) {
+    order:2;
+  }
 
-.faqSection {
-    gap: 20px;
-    padding: 5rem 2rem;
-}
+  .BannerSection p {
+      width: 80%;
+      font-size: 1.2rem;
+      line-height: 1.2em;
+  }
 
-.faqSection > div {
-    flex-direction: column;
-}
+  .BannerSection sub {
+      font-family: sabalon, sans-serif;
+      font-size: 1.5rem;
+      line-height: 1em;
+      width: 70%;
+      text-align: center;
+      margin: 0 auto;
+  }
+
+  .BannerSection button {
+      padding: 14px 20px;
+  }
 
 
-.accordion {
-  width: auto;
-}
+  .faqSection {
+      gap: 20px;
+      padding: 5rem 2rem;
+  }
 
-.BannerSection sub {
-    font-family: sabalon, sans-serif;
-    font-size: 1.5rem;
-    line-height: 1em;
-    width: 70%;
-    text-align: center;
-    margin: 0 auto;
-}
+  .faqSection > div {
+      flex-direction: column;
+  }
 
-.BannerSection button {
-    padding: 14px 20px;
-}
 
-.countDownSection {
+  .accordion {
+    width: auto;
+  }
+
+  .countDownSection {
+      padding: 5rem 2rem;
+      background: #fff;
+  }
+
+  .countDownSection h2 {
+      width: 100%;
+      font-size: 2.5rem;
+  }
+
+  .countDownSection p {
+      width: 100%;
+  }
+
+
+  .venueSection {
     padding: 5rem 2rem;
     background: #fff;
-}
+  }
 
-.countDownSection h2 {
-    width: 100%;
-    font-size: 2.5rem;
-}
+  .venueSection h4 {
+    margin-bottom: 0px;
+  }
 
-.countDownSection p {
+  .venueSection h2 {
+      width: 100%;
+      font-size: 5rem;
+      text-align: center;
+      line-height: 0.9em;
+      margin-bottom: 0px;
+  }
+
+  .countDownSection p {
+      width: 100%;
+      text-align: center;
+  }
+
+  .venueSection p {
+    margin-bottom: 50px;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+  }
+
+
+  .venueSection  iframe {
     width: 100%;
-}
+    height: 300px;
+  }
+
+
+  .sevenTraditionSection {
+      padding: 5rem 2rem;
+  }
+
+  .sevenTraditionSection {
+      padding: 5rem 2rem;
+      background-color: #fff;
+  }
+
+
+  .sevenTraditionSection h2 {
+      color: #000;
+      text-shadow: 0 0 12px #fff6;
+      font-family: sabalon, sans-serif;
+      font-size: 5rem;
+      text-align: center;
+      line-height: 0.9em;
+  }  
+
+  .sevenTraditionSection > div > div {
+    width: 100%;
+    gap: 10px;
+  }
+
+
+  .gallerySection {
+    padding: 5rem 2rem;
+  }
+
+
+  .dressCodeSection {
+      padding: 50px 2rem;
+      background-color: #fff;
+  }
+
+  .dressCodeSection h2 {
+      margin-bottom: 20px;
+      font-size: 5rem;
+      line-height: 0.9em;
+      text-align: center;
+  }
+
+  .dressCodeSection p {
+      text-align: center;
+      width: 100%;
+      margin-bottom: 50px;
+      font-size: 1.5rem;
+      font-weight: 500;
+  }
+
+  .dressCodeSection h4 {
+      color: #000;
+      margin-bottom: 10px;;
+  }
+
+  .faqSection {
+      gap: 20px;
+      padding: 5rem 2rem;
+      background-color: #fff;
+  }
+
+  .faqSection h4  {
+      gap: 20px;
+      text-align: center;
+  }
+
+  .rsvpSection {
+    padding: 5rem 2rem 10rem;
+  }
+
+  .page-module__oVUEeq__rsvpSection h2 {
+    font-size: 5rem;
+  }
+  .rsvpSection p {
+    width: 100%;
+  }
+
+
 
 
 }

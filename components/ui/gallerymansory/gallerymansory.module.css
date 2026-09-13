@@ -1,0 +1,27 @@
+.gallery-masonry {
+  column-count: 2; /* 2 columns on mobile */
+  column-gap: 10px;
+  padding: 10px;
+}
+
+.gallery-masonry img {
+  width: 100%;
+  margin-bottom: 10px;
+  display: block;
+  border-radius: 8px;
+  break-inside: avoid; /* Prevents images from breaking across columns */
+}
+
+/* Tablet & Desktop scaling */
+@media (min-width: 768px) {
+  .gallery-masonry {
+    column-count: 3;
+    column-gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .gallery-masonry {
+    column-count: 4;
+  }
+}

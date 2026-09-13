@@ -1,4 +1,4 @@
-'use client'; // Required for Next.js App Router interactive components
+'use client';
 
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
 import Image from 'next/image';
@@ -13,7 +13,7 @@ export interface MasonryItem {
 
 export interface GalleryMansoryProps {
   items: MasonryItem[];
-  columns?: number;
+  columns?: number; // Desktop column count
   gap?: number;
   renderOverlay?: (item: MasonryItem) => ReactNode;
   onItemClick?: (item: MasonryItem) => void;
@@ -28,8 +28,27 @@ export const GalleryMansory: React.FC<GalleryMansoryProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [spans, setSpans] = useState<{ [key: string | number]: number }>({});
+  const [currentColumns, setCurrentColumns] = useState<number>(columns);
 
-  const rowHeight = 10; // Base grid unit height in pixels
+  const rowHeight = 10;
+
+  // Handle responsive column count adjustments based on viewport width
+  useEffect(() => {
+    const updateColumns = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        setCurrentColumns(2); // 2 columns for mobile
+      } else if (width < 1024) {
+        setCurrentColumns(Math.min(columns, 2)); // 2 columns for tablets
+      } else {
+        setCurrentColumns(columns); // Default columns for desktop
+      }
+    };
+
+    updateColumns();
+    window.addEventListener('resize', updateColumns);
+    return () => window.removeEventListener('resize', updateColumns);
+  }, [columns]);
 
   const calculateSpans = () => {
     if (!containerRef.current) return;
@@ -48,36 +67,37 @@ export const GalleryMansory: React.FC<GalleryMansoryProps> = ({
     calculateSpans();
     window.addEventListener('resize', calculateSpans);
     return () => window.removeEventListener('resize', calculateSpans);
-  }, [items, gap]);
+  }, [items, gap, currentColumns]);
 
   return (
     <div
       ref={containerRef}
       style={{
         display: 'grid',
-        gridTemplateColumns: `repeat(auto-fill, minmax(calc(${100 / columns}% - ${gap}px), 1fr))`,
+        gridTemplateColumns: `repeat(${currentColumns}, 1fr)`, // Clean, responsive grid split
         gridAutoRows: `${rowHeight}px`,
         gap: `${gap}px`,
         width: '100%',
+        boxSizing: 'border-box',
       }}
     >
       {items.map((item, index) => (
         <motion.div
           key={item.id}
           onClick={() => onItemClick && onItemClick(item)}
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-250px' }}
+          viewport={{ once: true, margin: '-50px' }} // Reduced margin threshold so items animate reliably on short mobile viewports
           transition={{
-            duration: 0.9,
-            delay: (index % columns) * 0.5, // Stagger effect across columns
+            duration: 0.6,
+            delay: (index % currentColumns) * 0.15, // Smooth animation stagger per row
             ease: [0.215, 0.61, 0.355, 1],
           }}
           style={{
             gridRowEnd: `span ${spans[item.id] || 25}`,
             position: 'relative',
             overflow: 'hidden',
-            minHeight: '150px',
+            borderRadius: '12px',
             cursor: onItemClick ? 'pointer' : 'default',
           }}
         >
@@ -91,7 +111,7 @@ export const GalleryMansory: React.FC<GalleryMansoryProps> = ({
                 width: '100%',
                 height: 'auto',
                 display: 'block',
-                objectFit: 'cover'
+                objectFit: 'cover',
               }}
             />
           ) : (
@@ -100,6 +120,7 @@ export const GalleryMansory: React.FC<GalleryMansoryProps> = ({
               src={item.src}
               alt={item.alt || ''}
               onLoad={calculateSpans}
+              sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
               style={{
                 width: '100%',
                 height: 'auto',
