@@ -35,6 +35,7 @@ import { ScrollGallery, ShowcaseItem } from "@/components/ui/scrollgallery/Scrol
 import { GalleryMansory, MasonryItem } from "@/components/ui/gallerymansory/GalleryMansory";
 import RsvpForm from '@/components/forms/callie/RsvpForm';
 import OceanBubbles from '@/components/ui/effects/ocean/OceanBubbles';
+import {CardCarousel} from '@/components/ui/cardcarousel/CardCadrousel'
 import Link from 'next/link';
 
 const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
@@ -75,7 +76,6 @@ const sevenRoses = [
   "Lolo Ben Crisologo",
   "Daddy Rodney Ramos",
 ]
-
 
 const sevenBills = [
     "Tita Jeanette Perry",
@@ -339,6 +339,19 @@ export default function Callie() {
             />
 
           </section>
+        }
+
+
+        {isMobile && 
+         <section className={`${Style.parallaxGallerySection} flex flex-col`} >
+            <div className="flex h-screen items-center justify-center bg-[#f5f4f3]">
+                  <CardCarousel
+                    items={debutantImages}
+                    autoplay={{ delay: 3000 }}
+                    cardClassName="h-[400px] w-[280px]"
+                  />
+            </div>
+         </section>
         }
 
         <section className={`${Style.venueSection} relative flex flex-col items-center justify-center min-h-[200px] overflow-hidden p-20`} >

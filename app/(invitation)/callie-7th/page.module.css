@@ -923,6 +923,17 @@ body p, body li {
     width: 100%;
   }
 
+  .accordion {
+    background-color: #fff;
+  }
+
+  .accordionHeader, .accordionContent {
+    color:#000!important;
+  }
+
+  .parallaxGallerySection .h-screen {
+    height: 60vh!important;
+  }
 
 
 
