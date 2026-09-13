@@ -153,7 +153,7 @@ export default function RsvpForm({ onSubmit }: RsvpFormProps) {
           value={formData.comments}
           onChange={handleChange}
           rows={4}
-          placeholder="Let us know if you have any questions or dietary requirements..."
+          placeholder="Please feel free to let us know if you have any questions, and kindly let us know how many guests will be joining us. We can’t wait to celebrate with you!"
           style={styles.textarea}
         />
       </div>
