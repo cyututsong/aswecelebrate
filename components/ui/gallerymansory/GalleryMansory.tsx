@@ -77,7 +77,6 @@ export const GalleryMansory: React.FC<GalleryMansoryProps> = ({
             gridRowEnd: `span ${spans[item.id] || 25}`,
             position: 'relative',
             overflow: 'hidden',
-            borderRadius: '8px',
             minHeight: '150px',
             cursor: onItemClick ? 'pointer' : 'default',
           }}
@@ -92,8 +91,7 @@ export const GalleryMansory: React.FC<GalleryMansoryProps> = ({
                 width: '100%',
                 height: 'auto',
                 display: 'block',
-                objectFit: 'cover',
-                borderRadius: '8px',
+                objectFit: 'cover'
               }}
             />
           ) : (
@@ -107,7 +105,6 @@ export const GalleryMansory: React.FC<GalleryMansoryProps> = ({
                 height: 'auto',
                 display: 'block',
                 objectFit: 'cover',
-                borderRadius: '8px',
               }}
             />
           )}

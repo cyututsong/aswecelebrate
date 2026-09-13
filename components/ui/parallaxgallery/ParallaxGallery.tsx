@@ -111,7 +111,7 @@ const Column = ({ images, y, initialTop }: ColumnProps) => {
         const imageSrc = typeof src === "string" ? src : src.src;
 
         return (
-          <div key={idx} className="relative h-full w-full overflow-hidden rounded-lg">
+          <div key={idx} className="relative h-full w-full overflow-hidden">
             <img
               src={imageSrc}
               alt={`Parallax gallery image ${idx + 1}`}

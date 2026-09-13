@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap');
+
+
 @font-face {
   font-family: 'sabalon';
   src: url('../../../src/assets/fonts/sabalon.woff') format('woff');
@@ -8,12 +12,69 @@
 }
 
 
+.gradientText {
+  /* Apply your multi-stop linear gradient */
+  background: linear-gradient(
+    135deg,
+    #38bdf8 0%,    /* Vibrant Cyan */
+    #5e9cff 25%,   /* Ocean Blue */
+    #a895ee 45%,   /* Soft Lavender */
+    #ff93c9 65%,   /* Soft Neon Pink */
+    #c451dc 85%,   /* Pink to Purple */
+    #8e28d4 100%   /* Deep Purple */
+  );
+
+  /* Clip the gradient background to the text content */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 2px #fff;
+  
+  /* Make the original text color transparent so the gradient shines through */
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+
+  /* Optional: keeps text crisp */
+  display: inline-block;
+}
+
+
+body p, body li {
+  font-family: "Fredoka", sans-serif;
+}
+
+
+
 .BannerSection  {
-    background: radial-gradient(circle, #9881c3, #8570b7, #434e92);
+    position: relative;
+    display: flex;
+    height: 1200px;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    /* background: radial-gradient(circle, #9881c3, #8570b7, #434e92) */
+    /*background: radial-gradient(circle, #5c77bd, #3f5ba9, #2c428a);*/
+    background: radial-gradient(
+      circle at 50% 40%,
+      #38bdf8 0%,    /* Center: Vibrant Cyan glow */
+      #5e9cff 25%,   /* Mid-inner: Ocean Blue */
+      #a895ee 45%,   /* Soft Lavender bridge */
+      #ff93c9 65%,   /* Mid-outer: Soft Neon Pink */
+      #c451dc 85%,   /* Pink to Purple transition */
+      #8e28d4 100%   /* Outer edges: Deep Purple */
+  );
+}
+
+.BannerSection .waveTop {
+  top: -50px!important;
+  left: 0px!important;
+}
+
+.BannerSection .waveBottom {
+  bottom: -50px!important;
 }
 
 .BannerSection h2  {
-    font-family: "Sacramento", cursive;
+    font-family: "Bubblegum Sans", sans-serif;
     font-size: 7rem;
     margin-bottom: -100px;
     z-index: 10;
@@ -35,21 +96,20 @@
 
 
 .BannerSection p {
-  font-family: "Carlito", sans-serif;
   font-size: 1.5rem;
   width: 80%;
 }
 
-
-.BannerSection {
+.BannerSection > div:nth-child(2) {
+    flex-direction: row;
     display: flex;
-    height: 1000px;
-    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
 }
 
-.BannerSection > div:first-child {
+.BannerSection > div:nth-child(2) > div:nth-child(1) {
     display: flex;
-    flex-direction: column;
+    flex-direction: col;
     justify-content: center;
     align-items: center;
     gap: 2rem;
@@ -57,23 +117,13 @@
 }
 
 .BannerSection sub  {
-    font-size: 0.9rem;
-    background-color: rgba(255, 255, 255, 0.5);
-    padding: 0.2rem 2rem 0.3rem;
+    font-family: 'sabalon', sans-serif;
+    font-size: 1.9rem;
+    background-color: rgba(180, 9, 196, 0.5);
+    padding: 0.7rem 2rem 0.3rem;
     border-radius: 100px;
-    line-height: 1.2em;
+    line-height: 1em;
     color: #fff;
-    margin-bottom: 20px;
-}
-
-
-.BannerSection > div:last-child {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    text-align: center;
 }
 
 
@@ -85,7 +135,6 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  border-radius: 28px;
   overflow: hidden;
   isolation: isolate;
   transition: transform 0.5s ease-in-out;
@@ -196,26 +245,30 @@
 
 
 .countDownSection  {
-  padding: 5rem 2rem;
+  padding: 10rem 2rem;
 }
 
 .countDownSection h2 {
-    font-family: "Sacramento", cursive;
+    font-family: 'sabalon', sans-serif;
     font-size: 5rem;
     margin-bottom: 20px;
+    width: 60%;
+    text-align: center;
     z-index: 10;
+    line-height: 1.1em;
 }
 
 .countDownSection p {
     font-size: 1.5rem;
     text-align: center;
     margin:0 auto 20px auto;
-    width: 70%;
+    width: 60%;
     text-wrap: pretty;
 }
 
 
 .countDownSection h4 {
+    font-family: "Bubblegum Sans", sans-serif; 
     font-size: 2rem;
     text-align: center;
     margin:0 auto 20px auto;
@@ -228,31 +281,79 @@
 }
 
 
-.venueSection h2 {
-    font-family: "Sacramento", cursive;
-    font-size: 7rem;
-    margin-bottom: -50px;
-    z-index: 10;
+.venueSection {
+    padding: 10rem 2rem;
 }
 
-.venueSection h3 {
+.venueSection h4 {
     font-size: 2.5rem;
+    font-family: "Bubblegum Sans", sans-serif;
+    margin-bottom: -20px;
+}
+
+.venueSection h2 {
+    font-size: 7rem;
+    z-index: 10;
+    font-family: 'sabalon', sans-serif;
+    margin-bottom: -30px;
 }
 
 .venueSection p {
     font-size: 1.5rem;
     margin-bottom: 50px;
+    font-weight: 500;
 }
 
 
 .sevenTraditionSection {
+  position: relative;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 50px 0;
+  /* Top-to-bottom ocean depth linear gradient sampled from the invitation card */
+  background: linear-gradient(
+      180deg,
+      #38bdf8 0%,    /* Top: Vibrant Cyan */
+      #4cb6f9 5%,   /* Cyan to Blue bridge */
+      #5e9cff 15%,   /* Soft Ocean Blue */
+      #8894f6 30%,   /* Blue to Lavender transition */
+      #b98def 45%,   /* Lavender to Soft Pink */
+      #ff93c9 60%,   /* Main Neon Pink */
+      #e873d6 75%,   /* Eased Pink-to-Purple bridge (eliminates hard seam) */
+      #c451dc 85%,   /* Soft Magenta/Purple */
+      #a83ee0 92%,   /* Rich Purple */
+      #8e28d4 100%   /* Deep Purple Bottom */
+    );
+  color: #ffffff;
+  padding: 10rem 2rem;
+  overflow: hidden;
 }
 
+
+/* Header Text Styles for strong contrast */
+
+.sevenTraditionSection h2 {
+  font-family: 'sabalon', sans-serif;
+  font-size: 5rem;
+  color:#000;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.4); 
+}
+
+.sevenTraditionSection h3 {
+  font-family: "Bubblegum Sans", sans-serif; 
+  color: #e0e7ff; /* Very light periwinkle */
+  text-shadow: 0 0 8px rgba(165, 180, 252, 0.5);
+  font-size: 2.5rem;
+  text-align: center;
+   margin-bottom:20px;
+}
+
+.sevenTraditionSection li {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+    color: #f1f5f9;
+}
 
 .sevenTraditionSection > div {
   display:flex;
@@ -273,15 +374,10 @@
    text-align: center;
 }
 
-.sevenTraditionSection h3 {
-   text-align: center;
-   margin-bottom:20px;
+.tranditionContainer > div:last-child {
+  margin: 0 auto;
 }
 
-.sevenTraditionSection li {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
 
 .gallerySection {
   padding: 50px 0;
@@ -294,20 +390,26 @@
   padding: 50px 0;
 }
 
-.dressCodeSection h2 {
-    font-family: "Sacramento", cursive;
-    font-size: 7rem;
-    margin-bottom: -50px;
-    z-index: 10;
+.dressCodeSection h4 {
+    font-size: 2.5rem;
+    font-family: "Bubblegum Sans", sans-serif;
+    margin-bottom: -20px;
+    color:#000;
 }
 
-.dressCodeSection h3 {
-    font-size: 2.5rem;
+.dressCodeSection h2 {
+    font-size: 7rem;
+    z-index: 10;
+    font-family: 'sabalon', sans-serif;
+    margin-bottom: -30px;
 }
 
 .dressCodeSection p {
     font-size: 1.5rem;
     margin-bottom: 50px;
+    font-weight: 500;
+    width: 40%;
+    text-align: center;
 }
 
 
@@ -315,25 +417,70 @@
   display:flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 0;
+  padding: 10rem 2rem;
   gap:20px 20px;
 }
 
-.faqSection h2 {
-    font-family: "Sacramento", cursive;
-    font-size: 7rem;
-    margin-bottom: 50px;
-    z-index: 10;
+.faqSection h4 {
+    font-size: 2.5rem;
+    font-family: "Bubblegum Sans", sans-serif;
+    margin-bottom: -20px;
+    color:#000;
 }
 
-.faqSection h3 {
-    font-size: 2.5rem;
+.faqSection h2 {
+    font-size: 7rem;
+    z-index: 10;
+    font-family: 'sabalon', sans-serif;
+    margin-bottom: -30px;
 }
 
 .faqSection p {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 0px;
 }
+
+.rsvpSection {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rem 2rem 15rem 2rem;
+  gap:20px 20px;
+  background-image: url('./images/oceanbackground.jpg');
+  background-size: cover;
+  background-position: top center;
+}
+
+.rsvpSection h2 {
+    font-family: 'sabalon', sans-serif;
+    font-size: 7rem;
+    margin-bottom: -50px;
+    z-index: 10;
+}
+
+.rsvpSection p {
+    font-size: 1.5rem;
+    margin-bottom: 50px; 
+    width: 30%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+.oceanBottom {
+  background-image: url('./images/oceanbottom.png');
+  width: 100%;
+  height: 150px;
+  position: fixed;
+  bottom: -5px;
+  background-size: contain;
+  z-index: 10;
+}
+
+
+
+
+/* ACCORDION CSS */
 
 .accordion {
   max-width: 600px;
@@ -353,12 +500,15 @@
 }
 
 .accordionHeader {
+  font-family: "Bubblegum Sans", sans-serif; 
+  font-size: 1.7rem;
   padding: 16px;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   background-color: #f8fafc;
   list-style: none; /* Hides default marker */
   position: relative;
+  padding: 20px;
 }
 
 /* Custom arrow indicator */
@@ -374,31 +524,84 @@
 }
 
 .accordionContent {
-  padding: 16px;
+  padding: 40px 50px;
   background-color: #ffffff;
   color: #334155;
 }
 
-
-.rsvpSection {
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 80px 0 150px 0;
-  gap:20px 20px;
+.accordionContent p {
+  font-size: 16px;
 }
 
-.rsvpSection h2 {
-    font-family: "Sacramento", cursive;
-    font-size: 7rem;
-    margin-bottom: -50px;
-    z-index: 10;
+
+/* DIVIDER ANIMATION */
+.waveTop,
+.waveBottom {
+  position: absolute;
+  left: 0;
+  width: 200%;
+  overflow: hidden;
+  line-height: 0;
+  pointer-events: none;
+  z-index: 10;
+  max-width: 200%;
 }
 
-.rsvpSection p {
-    font-size: 1.5rem;
-    margin-bottom: 50px;  
+
+.waveTop {
+  top:-20px;
 }
+
+.waveBottom {
+  bottom: -20px;
+}
+
+/* Base SVG styling */
+.waveSvg {
+  position: relative;
+  display: block;
+  /* Make SVG wider than container to accommodate horizontal movement */
+  width: calc(120% + 1.3px); 
+  height: 150px;
+}
+
+/* Foreground main wave animation */
+.wavePath1 {
+  animation: waveScroll1 8s ease-in-out infinite alternate;
+  transform-origin: center bottom;
+}
+
+/* Background semi-transparent wave animation (staggered speed) */
+.wavePath2 {
+  animation: waveScroll2 12s ease-in-out infinite alternate;
+  transform-origin: center top;
+}
+
+/* Top Wave Motion Keyframes */
+@keyframes waveScroll1 {
+  0% {
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-4%) scaleY(1.15); /* Swell height */
+  }
+  100% {
+    transform: translateX(-8%) scaleY(0.95);
+  }
+}
+
+@keyframes waveScroll2 {
+  0% {
+    transform: translateX(-6%) scaleY(0.9);
+  }
+  50% {
+    transform: translateX(-2%) scaleY(1.2);
+  }
+  100% {
+    transform: translateX(0%) scaleY(1);
+  }
+}
+
 
 
 

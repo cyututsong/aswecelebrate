@@ -1,4 +1,7 @@
-import React, { useState, ChangeEvent, SubmitEvent } from 'react';
+'use client';
+
+import React, { useState, ChangeEvent, FormEvent } from 'react';
+import { sendRsvpAction } from '@/server/actions/sendRsvp'; 
 
 export interface RsvpFormData {
   name: string;
@@ -21,6 +24,8 @@ export default function RsvpForm({ onSubmit }: RsvpFormProps) {
     comments: ''
   });
 
+  const [submitting, setSubmitting] = useState(false);
+
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -31,14 +36,31 @@ export default function RsvpForm({ onSubmit }: RsvpFormProps) {
     }));
   };
 
-  // Modern React 19+ / TS typing using SubmitEvent
-  const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSubmitting(true);
+
     if (onSubmit) {
       onSubmit(formData);
-    } else {
-      console.log('RSVP Submitted:', formData);
     }
+
+    // Send email using Next.js Server Action
+    const response = await sendRsvpAction(formData);
+
+    if (response.success) {
+      alert('RSVP submitted successfully!');
+      setFormData({
+        name: '',
+        email: '',
+        attending: 'yes',
+        phone: '',
+        comments: ''
+      });
+    } else {
+      alert('Failed to send RSVP. Please try again.');
+    }
+
+    setSubmitting(false);
   };
 
   return (
@@ -75,6 +97,22 @@ export default function RsvpForm({ onSubmit }: RsvpFormProps) {
         />
       </div>
 
+      {/* Phone Field */}
+      <div style={styles.fieldGroup}>
+        <label htmlFor="phone" style={styles.label}>
+          Phone Number
+        </label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          placeholder="Enter your phone number"
+          style={styles.input}
+        />
+      </div>
+
       {/* Attendance Radio Options */}
       <div style={styles.fieldGroup}>
         <label style={styles.label}>Might we expect your presence?</label>
@@ -104,22 +142,6 @@ export default function RsvpForm({ onSubmit }: RsvpFormProps) {
         </div>
       </div>
 
-      {/* Phone Field */}
-      <div style={styles.fieldGroup}>
-        <label htmlFor="phone" style={styles.label}>
-          Phone Number
-        </label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          placeholder="Enter your phone number"
-          style={styles.input}
-        />
-      </div>
-
       {/* Comments Text Area */}
       <div style={styles.fieldGroup}>
         <label htmlFor="comments" style={styles.label}>
@@ -136,8 +158,16 @@ export default function RsvpForm({ onSubmit }: RsvpFormProps) {
         />
       </div>
 
-      <button type="submit" style={styles.submitButton}>
-        Send RSVP
+      <button
+        type="submit"
+        disabled={submitting}
+        style={{
+          ...styles.submitButton,
+          opacity: submitting ? 0.7 : 1,
+          cursor: submitting ? 'not-allowed' : 'pointer'
+        }}
+      >
+        {submitting ? 'Sending...' : 'Send RSVP'}
       </button>
     </form>
   );
@@ -146,25 +176,13 @@ export default function RsvpForm({ onSubmit }: RsvpFormProps) {
 const styles: Record<string, React.CSSProperties> = {
   formContainer: {
     maxWidth: '700px',
-    width: '100vw',
+    width: '100%',
     margin: '0 auto',
     padding: '50px',
     backgroundColor: '#ffffff',
     borderRadius: '0px',
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
     fontFamily: 'sans-serif'
-  },
-  heading: {
-    margin: '0 0 8px 0',
-    fontSize: '24px',
-    textAlign: 'center',
-    color: '#1a2530'
-  },
-  subheading: {
-    marginBottom: '24px',
-    fontSize: '14px',
-    textAlign: 'center',
-    color: '#555555'
   },
   fieldGroup: {
     marginBottom: '20px',
@@ -220,7 +238,6 @@ const styles: Record<string, React.CSSProperties> = {
     color: '#ffffff',
     backgroundColor: '#2b4263',
     border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer'
+    borderRadius: '4px'
   }
 };

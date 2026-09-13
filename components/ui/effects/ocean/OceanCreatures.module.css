@@ -1,0 +1,80 @@
+.creatureContainer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 5;
+}
+
+.creature {
+  position: absolute;
+  top: var(--top);
+  width: var(--size);
+  height: var(--size);
+  opacity: 0.65;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
+}
+
+/* Color variations */
+.fish1 {
+  color: #7dd3fc; /* Light Cyan Fish */
+}
+
+.fish2 {
+  color: #f472b6; /* Pink Fish */
+}
+
+.jellyfish {
+  color: #c084fc; /* Soft Purple Glow Jellyfish */
+  animation: floatJelly 3s ease-in-out infinite alternate;
+}
+
+/* Left-to-Right Swimming */
+.leftToRight {
+  left: -80px;
+  animation: swimRight var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+/* Right-to-Left Swimming (Flipped horizontally) */
+.rightToLeft {
+  right: -80px;
+  transform: scaleX(-1);
+  animation: swimLeft var(--duration) linear infinite;
+  animation-delay: var(--delay);
+}
+
+/* Swimming Keyframes */
+@keyframes swimRight {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  50% {
+    transform: translateX(55vw) translateY(-15px); /* Gentle undulating wave */
+  }
+  100% {
+    transform: translateX(115vw) translateY(5px);
+  }
+}
+
+@keyframes swimLeft {
+  0% {
+    transform: scaleX(-1) translateX(0) translateY(0);
+  }
+  50% {
+    transform: scaleX(-1) translateX(55vw) translateY(15px);
+  }
+  100% {
+    transform: scaleX(-1) translateX(115vw) translateY(-5px);
+  }
+}
+
+/* Vertical Pulse for Jellyfish */
+@keyframes floatJelly {
+  0% {
+    transform: translateY(0) scaleY(1);
+  }
+  100% {
+    transform: translateY(-12px) scaleY(1.1);
+  }
+}

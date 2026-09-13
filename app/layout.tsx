@@ -1,9 +1,15 @@
+// app/layout.tsx
 import type { Metadata } from "next";
-import { Playfair_Display, Poppins } from 'next/font/google'
-import "./globals.css";
-import Header from "@/components/layout/Header/Header";
-import Footer from "@/components/layout/Footer/Footer";
+import { Playfair_Display, Poppins } from 'next/font/google';
+import "@/app/globals.css"; // Ensure global CSS is imported here
 
+export const metadata: Metadata = {
+  title: 'As We Celebrate',
+  description: 'Your one-stop destination for event planning, offering a curated selection of templates, venues, and expert advice to make your celebration unforgettable.',
+  icons: {
+    icon: "image/favicon.png",
+  },
+};
 
 const playfairDisplay = Playfair_Display({
   subsets: ['latin'],
@@ -19,15 +25,6 @@ const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700'],
 });
 
-export const metadata: Metadata = {
-  title: 'As We Celebrate',
-  description: 'Your one-stop destination for event planning, offering a curated selection of templates, venues, and expert advice to make your celebration unforgettable.',
-  icons: {
-    icon: "image/favicon.png",
-  },
-}
-
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -36,14 +33,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfairDisplay.variable} ${poppins.variable} h-full antialiased`}> 
+      className={`${playfairDisplay.variable} ${poppins.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col" cz-shortcut-listen="true">
-        <Header />
-        <main className="min-h-screen flex items-top flex-col">        
-          {children}
-        </main>
-        <Footer />    
-      </body>  
+        {children}
+      </body>
     </html>
   );
 }
