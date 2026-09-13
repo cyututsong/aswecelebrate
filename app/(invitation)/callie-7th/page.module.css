@@ -109,7 +109,7 @@ body p, body li {
 
 .BannerSection > div:nth-child(2) > div:nth-child(1) {
     display: flex;
-    flex-direction: col;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
@@ -421,6 +421,14 @@ body p, body li {
   gap:20px 20px;
 }
 
+
+.faqSection > div {
+    display: flex;
+    flex-direction: row;
+    gap:50px;
+}
+
+
 .faqSection h4 {
     font-size: 2.5rem;
     font-family: "Bubblegum Sans", sans-serif;
@@ -577,6 +585,7 @@ body p, body li {
   transform-origin: center top;
 }
 
+
 /* Top Wave Motion Keyframes */
 @keyframes waveScroll1 {
   0% {
@@ -601,8 +610,6 @@ body p, body li {
     transform: translateX(0%) scaleY(1);
   }
 }
-
-
 
 
 @keyframes glassShimmer {
@@ -645,4 +652,79 @@ body p, body li {
   .card::after {
     animation: none;
   }
+}
+
+
+@media only screen and (max-width: 600px) {
+
+
+.BannerSection {
+  flex-direction: column;
+}
+
+.BannerSection > div:nth-child(2) {
+    flex-direction: column;
+}
+
+.BannerSection > div:nth-child(2) > div:nth-child(1) {
+    width: 100%;
+}
+
+.BannerSection h2 {
+    font-size: 4.5rem;
+    line-height: 1em;
+    margin-bottom: -50px;
+}
+
+.BannerSection h3 {
+    color: #000;
+    margin-bottom: -100px;
+    font-family: sabalon, sans-serif;
+    font-size: 10rem;
+}
+
+.BannerSection {
+        padding-left: 20px;
+        padding-right: 20px;
+}
+
+.BannerSection > div:nth-child(2)  {
+        padding-left: 0px;
+        padding-right: 0px;
+}
+
+.cardStack {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    padding: 150px 0px;
+}
+
+.BannerSection > div:nth-child(2) > div:nth-child(1) {
+  order:2;
+}
+
+.BannerSection p {
+    width: 80%;
+    font-size: 1.2rem;
+    line-height: 1.2em;
+}
+
+
+
+.faqSection {
+    gap: 20px;
+    padding: 5rem 2rem;
+}
+
+.faqSection > div {
+    flex-direction: column;
+}
+
+
+.accordion {
+  width: auto;
+}
+
+
 }

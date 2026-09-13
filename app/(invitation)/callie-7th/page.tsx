@@ -512,7 +512,7 @@ export default function Callie() {
               <h4>Other Useful INFORMATION</h4>
               <h2 className={Style.gradientText}>FAQ</h2>
               
-              <div className='flex flex-row gap-10'>
+              <div>
 
                 <div>
                   <Image 
