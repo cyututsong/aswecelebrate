@@ -560,7 +560,7 @@ export default function Callie() {
                           <summary className={Style.accordionHeader}>When is the RSVP Deadline?</summary>
                           <div className={Style.accordionContent}>
                             <p>
-                              Please RSVP by <strong>September 20, 2026</strong> so we can finalize all arrangements.
+                              Please RSVP by <strong>September 20, 2026</strong>, so we can finalise all the arrangements. Kindly submit your RSVP using the form below.
                             </p>
                           </div>
                         </details>

@@ -695,7 +695,7 @@ body p, body li {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
 
   .displayDestop {
     display: none;
@@ -957,10 +957,5 @@ body p, body li {
   .parallaxGallerySection .h-screen {
     height: 60vh!important;
   }
-
-
-
-
-
 
 }
