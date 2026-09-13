@@ -11,6 +11,10 @@
   font-display: swap;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 .gradientText {
   /* Apply your multi-stop linear gradient */

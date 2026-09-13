@@ -35,6 +35,7 @@ import { ScrollGallery, ShowcaseItem } from "@/components/ui/scrollgallery/Scrol
 import { GalleryMansory, MasonryItem } from "@/components/ui/gallerymansory/GalleryMansory";
 import RsvpForm from '@/components/forms/callie/RsvpForm';
 import OceanBubbles from '@/components/ui/effects/ocean/OceanBubbles';
+import Link from 'next/link';
 
 const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
 
@@ -196,6 +197,14 @@ const sampleSpeakers: ShowcaseItem[] = [
 ];
 
 
+const handleScrollToRSVP = (e) => {
+  e.preventDefault();
+  const element = document.getElementById('rsvp');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
 
 export default function Callie() {
 
@@ -238,7 +247,7 @@ export default function Callie() {
                   <h3 >7th</h3>
                   <h4>Birthday Celebration</h4>
                   <p>Dive into magical Under the Sea Adventure filled with pearl. Sparkles, and ocean wonders!</p>
-                  <button>RSVP to Celebrate</button>
+                  <button onClick={handleScrollToRSVP}>RSVP to Celebrate</button>
                 </div>
 
                 {/* Stack Container */}
@@ -581,7 +590,7 @@ export default function Callie() {
 
         </section>
 
-        <section className={`w-full ${Style.rsvpSection}`}>
+        <section id="rsvp" className={`w-full ${Style.rsvpSection}`}>
 
               <h2 className={Style.gradientText}>RSVP</h2>
               <p>We have reserved seat/s for you. A favor of a reply is requested. Fill up the form below</p>
