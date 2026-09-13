@@ -326,7 +326,7 @@ export default function Callie() {
         <section className={`${Style.countDownSection} relative flex flex-col items-center justify-center min-h-[200px] overflow-hidden`}>
           
           <h2 className={Style.gradientText}>Seven Splendid Years of Radiance</h2>
-          <p>“Seven years of sunshine, giggles, and making waves! Jewel Callie Rae is overflowing with excitement to celebrate her 7th milestone voyage with her favorite family and friends. Come dive into an unforgettable day of laughter, swimming, sweet treats, and oceanic surprises!</p>
+          <p>Seven years of sunshine, giggles, and making waves! Jewel Callie Rae is overflowing with excitement to celebrate her 7th milestone voyage with her favorite family and friends. Come dive into an unforgettable day of laughter, swimming, sweet treats, and oceanic surprises!</p>
 
           <CountDown 
             targetDate="2026-09-26T00:16:00" 
@@ -360,7 +360,7 @@ export default function Callie() {
         <section className={`${Style.venueSection} relative flex flex-col items-center justify-center min-h-[200px] overflow-hidden p-20`} >
 
           <h4>Event Details</h4>
-          <p>Saturday, September 26, 2026 3:00pm</p>
+          <p>Saturday 3:00pm,<br/> September 26, 2026</p>
           <h2 className={Style.gradientText}>Casa Prinza</h2>
           <p>G6P9+G3W, F. Gonzales Street, Teresa, Rizal</p>
 
@@ -560,7 +560,7 @@ export default function Callie() {
                           <summary className={Style.accordionHeader}>When is the RSVP Deadline?</summary>
                           <div className={Style.accordionContent}>
                             <p>
-                              Please RSVP by <strong>September 20, 2026</strong> so we can finalize all arrangements. You can RSVP online or by returning the card included.
+                              Please RSVP by <strong>September 20, 2026</strong> so we can finalize all arrangements.
                             </p>
                           </div>
                         </details>

@@ -204,6 +204,8 @@ const styles: Record<string, React.CSSProperties> = {
     padding: '10px 12px',
     fontSize: '14px',
     borderRadius: '4px',
+    backgroundColor: '#ffffff', // Background set to white for contrast
+    color: '#000000',           // Input text set to black
     border: '1px solid #ccc',
     outline: 'none'
   },
@@ -211,6 +213,8 @@ const styles: Record<string, React.CSSProperties> = {
     padding: '10px 12px',
     fontSize: '14px',
     borderRadius: '4px',
+    backgroundColor: '#ffffff', // Background set to white for contrast
+    color: '#000000',           // Input text set to black
     border: '1px solid #ccc',
     resize: 'vertical',
     outline: 'none'
@@ -225,10 +229,12 @@ const styles: Record<string, React.CSSProperties> = {
     fontSize: '14px',
     display: 'flex',
     alignItems: 'center',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    color: '#333333'
   },
   radioInput: {
-    marginRight: '8px'
+    marginRight: '8px',
+    accentColor: '#000000'
   },
   submitButton: {
     width: '100%',
