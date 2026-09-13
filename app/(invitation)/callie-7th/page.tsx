@@ -321,14 +321,16 @@ export default function Callie() {
 
         </section>
 
-        <section className={`${Style.parallaxGallerySection} flex flex-col`} >
+        {!isMobile && 
+          <section className={`${Style.parallaxGallerySection} flex flex-col`} >
 
-          <ParallaxGallery 
-                images={debutantImages}
-                columnSpeeds={[1.5, 2.5, 1.2, 1.8]}
-          />
+            <ParallaxGallery 
+                  images={debutantImages}
+                  columnSpeeds={[1.5, 2.5, 1.2, 1.8]}
+            />
 
-        </section>
+          </section>
+        }
 
         <section className={`${Style.venueSection} relative flex flex-col items-center justify-center min-h-[200px] overflow-hidden p-20`} >
 

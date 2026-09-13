@@ -266,6 +266,18 @@ body p, body li {
     text-wrap: pretty;
 }
 
+.countDownSection p {
+    font-size: 1.5rem;
+    text-align: center;
+    margin:0 auto 20px auto;
+    width: 60%;
+    text-wrap: pretty;
+}
+
+.timerContainer > span {
+  font-family: 'sabalon', sans-serif;
+}
+
 
 .countDownSection h4 {
     font-family: "Bubblegum Sans", sans-serif; 
@@ -665,12 +677,14 @@ body p, body li {
 
 .BannerSection {
   flex-direction: column;
-  padding-top: 100px;
+  padding-top: 200px;
+  padding-bottom: 300px;
 }
 
 .BannerSection > div:nth-child(2) {
     flex-direction: column;
     margin-top: 100px;
+    margin-bottom: 150px;
 }
 
 .BannerSection > div:nth-child(2) > div:nth-child(1) {
@@ -748,6 +762,7 @@ body p, body li {
     flex-direction: column;
 }
 
+
 .accordion {
   width: auto;
 }
@@ -761,6 +776,23 @@ body p, body li {
     margin: 0 auto;
 }
 
+.BannerSection button {
+    padding: 14px 20px;
+}
+
+.countDownSection {
+    padding: 5rem 2rem;
+    background: #fff;
+}
+
+.countDownSection h2 {
+    width: 100%;
+    font-size: 2.5rem;
+}
+
+.countDownSection p {
+    width: 100%;
+}
 
 
 }

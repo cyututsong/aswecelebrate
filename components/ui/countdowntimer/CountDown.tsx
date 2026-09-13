@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import NumberFlow from "@number-flow/react";
+import Style from "./CountDown.module.css"
 
 interface TimeRemaining {
   days: number;
@@ -79,7 +80,7 @@ export default function EventCountdown({
     : "text-xs text-neutral-400 font-normal uppercase tracking-wider mt-1";
 
   return (
-    <div className="flex flex-col items-center justify-center gap-6 font-sans py-6">
+    <div className={`${Style.timerContainer} flex flex-col items-center justify-center gap-6 font-sans py-6`}>
       {label && <span className={labelStyles}>{label}</span>}
 
       <div className={`flex items-center gap-3 ${isBubble ? "sm:gap-4 font-bold text-sky-950" : ""}`}>
