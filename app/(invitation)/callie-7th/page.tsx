@@ -360,7 +360,7 @@ export default function Callie() {
         <section className={`${Style.venueSection} relative flex flex-col items-center justify-center min-h-[200px] overflow-hidden p-20`} >
 
           <h4>Event Details</h4>
-          <p>Saturday 3:00pm,<br/> September 26, 2026</p>
+          <p className={Style.pdetails}>Saturday 3:00pm, September 26, 2026</p>
           <h2 className={Style.gradientText}>Casa Prinza</h2>
           <p>G6P9+G3W, F. Gonzales Street, Teresa, Rizal</p>
 
@@ -560,7 +560,7 @@ export default function Callie() {
                           <summary className={Style.accordionHeader}>When is the RSVP Deadline?</summary>
                           <div className={Style.accordionContent}>
                             <p>
-                              Please RSVP by <strong>September 20, 2026</strong>, so we can finalise all the arrangements. Kindly submit your RSVP using the form below.
+                              Please RSVP by <strong>September 20, 2026 </strong>, so we can finalise all the arrangements. Kindly submit your RSVP using the form below.
                             </p>
                           </div>
                         </details>

@@ -578,7 +578,7 @@ body p, body li {
 }
 
 .accordionContent p {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 
@@ -956,6 +956,11 @@ body p, body li {
 
   .parallaxGallerySection .h-screen {
     height: 60vh!important;
+  }
+
+  .pdetails {
+    width: 80%;
+    text-align: center;
   }
 
 }
