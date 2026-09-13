@@ -36,6 +36,8 @@ import { GalleryMansory, MasonryItem } from "@/components/ui/gallerymansory/Gall
 import RsvpForm from '@/components/forms/callie/RsvpForm';
 import OceanBubbles from '@/components/ui/effects/ocean/OceanBubbles';
 
+const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+
 const debutantImages = [
   callie15,
   callie5,
@@ -231,7 +233,7 @@ export default function Callie() {
          <div>
 
                 <div className="w-1/2 flex flex-col">
-                  <sub>YOU ARE INVITED</sub>
+                  {!isMobile && <sub>YOU ARE INVITED</sub>}
                   <h2 className={Style.gradientText}>Jewel Callie Rae</h2>
                   <h3 >7th</h3>
                   <h4>Birthday Celebration</h4>
@@ -240,6 +242,7 @@ export default function Callie() {
                 </div>
 
                 {/* Stack Container */}
+                {isMobile && <sub>YOU ARE INVITED</sub>}
                 <div className={`${Style.cardStack} flex items-center justify-center w-1/2 flex flex-col`}>  
                   
                   {/* Bottom Card (callie3) - Rotated Right */}
@@ -524,7 +527,7 @@ export default function Callie() {
                 </div>
                 <div>
 
-                  <div className={Style.accordion}>
+                <div className={Style.accordion}>
 
                         {/* 1. First Item - Open by default */}
                         <details className={Style.accordionItem} open>
@@ -569,6 +572,8 @@ export default function Callie() {
 
                     </div>
                 </div>
+
+
               </div>
 
 
@@ -583,7 +588,6 @@ export default function Callie() {
 
 
         </section>
-
 
         <section className={`w-full ${Style.oceanBottom}`}>
                 

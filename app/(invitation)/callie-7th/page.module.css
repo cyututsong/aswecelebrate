@@ -657,17 +657,32 @@ body p, body li {
 
 @media only screen and (max-width: 600px) {
 
+.waveTop {
+    top: -70px !important;
+    left: -50px !important;
+}
+
 
 .BannerSection {
   flex-direction: column;
+  padding-top: 100px;
 }
 
 .BannerSection > div:nth-child(2) {
     flex-direction: column;
+    margin-top: 100px;
 }
 
 .BannerSection > div:nth-child(2) > div:nth-child(1) {
     width: 100%;
+}
+
+.BannerSection sub {
+    font-family: sabalon, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1em;
+    width: 70%;
+    margin: 0 auto;
 }
 
 .BannerSection h2 {
@@ -678,19 +693,33 @@ body p, body li {
 
 .BannerSection h3 {
     color: #000;
-    margin-bottom: -100px;
+    margin-bottom: -50px;
     font-family: sabalon, sans-serif;
-    font-size: 10rem;
+    font-size: 8rem;
+}
+
+.BannerSection h4 {
+    font-size: 3rem;
+    line-height: 1em;
 }
 
 .BannerSection {
-        padding-left: 20px;
-        padding-right: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .BannerSection > div:nth-child(2)  {
-        padding-left: 0px;
-        padding-right: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.BannerSection p {
+    font-size: 1.3rem;
+}
+
+.oceanBottom {
+    height: 180px;
+    background-size: cover;
 }
 
 .cardStack {
@@ -710,8 +739,6 @@ body p, body li {
     line-height: 1.2em;
 }
 
-
-
 .faqSection {
     gap: 20px;
     padding: 5rem 2rem;
@@ -721,10 +748,19 @@ body p, body li {
     flex-direction: column;
 }
 
-
 .accordion {
   width: auto;
 }
+
+.BannerSection sub {
+    font-family: sabalon, sans-serif;
+    font-size: 1.5rem;
+    line-height: 1em;
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+}
+
 
 
 }
