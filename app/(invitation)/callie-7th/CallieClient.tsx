@@ -104,7 +104,7 @@ const sevenCandles = [
   "Tita Etel & Ate JJ",
   "Ninang Kim & Ninang Pedi",
   "Ninang Michelle Pagurayan",
-  "Ninang Cyrrah & Ninang Sam"  
+  "Ninang Cyrrah, Ninang Janna & Ninang Sam"  
 ];
 
 const sevenBallons = [
