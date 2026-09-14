@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     siteName: 'As We Celebrate',
     images: [
       {
-        url: 'https://aswecelebrate.com/images/callie-og.jpg',
+        url: 'https://aswecelebrate.com/image/callie-og.jpg',
         width: 1200,
         height: 630,
         alt: 'Jewel Callie Rae 7th Birthday Invitation',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Callie's 7th Birthday Celebration | Aswecelebrate",
     description: "Dive into a magical Under the Sea adventure filled with pearls, sparkles, and ocean wonders!",
-    images: ['https://aswecelebrate.com/images/callie-og.jpg'],
+    images: ['https://aswecelebrate.com/image/callie-og.jpg'],
   },
 };
 
