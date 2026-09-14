@@ -2,6 +2,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Poppins } from 'next/font/google';
 import "@/app/globals.css"; // Ensure global CSS is imported here
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: 'As We Celebrate',
@@ -37,6 +38,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col" cz-shortcut-listen="true">
         {children}
+        <GoogleAnalytics gaId="G-NLK1SPPHKY" />
       </body>
     </html>
   );
