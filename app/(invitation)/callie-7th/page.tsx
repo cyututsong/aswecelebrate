@@ -38,6 +38,35 @@ import OceanBubbles from '@/components/ui/effects/ocean/OceanBubbles';
 import {CardCarousel} from '@/components/ui/cardcarousel/CardCadrousel'
 import Link from 'next/link';
 import {MusicPlayer} from '@/components/ui/musicplayer/MusicPlayer';
+import { Metadata } from 'next';
+
+
+export const metadata: Metadata = {
+  title: "Callie's 7th Birthday Celebration | Aswecelebrate",
+  description: "Dive into a magical Under the Sea adventure filled with pearls, sparkles, and ocean wonders!",
+  openGraph: {
+    title: "Callie's 7th Birthday Celebration | Aswecelebrate",
+    description: "Dive into a magical Under the Sea adventure filled with pearls, sparkles, and ocean wonders!",
+    url: 'https://aswecelebrate.com/callie-7th',
+    siteName: 'As We Celebrate',
+    images: [
+      {
+        url: 'https://aswecelebrate.com/images/callie-og.jpg', // Absolute URL to your preview image
+        width: 1200,
+        height: 630,
+        alt: 'Jewel Callie Rae 7th Birthday Invitation',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Callie's 7th Birthday Celebration | Aswecelebrate",
+    description: "Dive into a magical Under the Sea adventure filled with pearls, sparkles, and ocean wonders!",
+    images: ['https://aswecelebrate.com/images/callie-og.jpg'],
+  },
+};
 
 
 const debutantImages = [
@@ -121,7 +150,7 @@ const sevenToys = [
     "Diane Francine Crisologo",
     "Jaxianna Kiersten Santiago",
     "Gideon Cabrera",
-    "Zackiesha Amber Dacara",
+    "Zackiesha Amber Brillante",
     "Summer Ayanah Dacara",
     "Seff Espiritu",
     "Soleil Margaux Sta. Maria"  
