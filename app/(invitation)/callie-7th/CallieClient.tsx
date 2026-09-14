@@ -78,10 +78,10 @@ const sevenRoses = [
 ];
 
 const sevenBills = [
-  "Kevin Charles Bancod",
   "Ninang Mary Grace Vidal",
   "Ninang Anelor Endriga",
-  "Ninang Gretchen Pamilaran",
+  "Ninong Richard Jay Bufete",
+  "Kevin Charles Bancod",
   "Ate Scarlette Jayda Francisco",
   "Judaea Estrelle Crisologo",
   "Ninang Irish Mae Cruz"  
