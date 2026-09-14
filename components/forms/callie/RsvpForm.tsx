@@ -65,10 +65,10 @@ export default function RsvpForm({ onSubmit }: RsvpFormProps) {
 
   return (
     <form onSubmit={handleSubmit} style={styles.formContainer}>
-      {/* Name Field (Optional) */}
+      {/* Name Field (Required) */}
       <div style={styles.fieldGroup}>
         <label htmlFor="name" style={styles.label}>
-          Name of Guest <span style={styles.optionalText}>(Optional)</span>
+          Name of Guest <span style={styles.requiredText}>*</span>
         </label>
         <input
           type="text"
@@ -77,6 +77,7 @@ export default function RsvpForm({ onSubmit }: RsvpFormProps) {
           value={formData.name}
           onChange={handleChange}
           placeholder="Enter your full name"
+          required
           style={styles.input}
         />
       </div>
@@ -200,12 +201,17 @@ const styles: Record<string, React.CSSProperties> = {
     color: '#777777',
     fontSize: '12px'
   },
+  requiredText: {
+    color: '#e53e3e',
+    fontSize: '14px',
+    marginLeft: '2px'
+  },
   input: {
     padding: '10px 12px',
     fontSize: '14px',
     borderRadius: '4px',
-    backgroundColor: '#ffffff', // Background set to white for contrast
-    color: '#000000',           // Input text set to black
+    backgroundColor: '#ffffff',
+    color: '#000000',
     border: '1px solid #ccc',
     outline: 'none'
   },
@@ -213,8 +219,8 @@ const styles: Record<string, React.CSSProperties> = {
     padding: '10px 12px',
     fontSize: '14px',
     borderRadius: '4px',
-    backgroundColor: '#ffffff', // Background set to white for contrast
-    color: '#000000',           // Input text set to black
+    backgroundColor: '#ffffff',
+    color: '#000000',
     border: '1px solid #ccc',
     resize: 'vertical',
     outline: 'none'
