@@ -38,7 +38,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col" cz-shortcut-listen="true">
         {children}
-        <GoogleAnalytics gaId="G-NLK1SPPHKY" />
+        <GoogleAnalytics gaId="G-XXXXXXXXXX" />
       </body>
     </html>
   );

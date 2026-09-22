@@ -382,7 +382,7 @@ export default function CallieClient() {
           </div>
 
           <div>
-            <h3>7 Roses</h3>
+            <h3>7 Flowers</h3>
             <ul>
               {sevenRoses.map((rose, index) => (
                 <li key={index}>{rose}</li>
