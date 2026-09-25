@@ -64,17 +64,17 @@ export default function CelebrantGallery({ celebrantEmail }: CelebrantGalleryPro
   if (loading) return <p className="text-center py-8 text-gray-500">Loading gallery...</p>;
 
   return (
-    <div className="w-full max-w-6xl mx-auto py-8 px-6">
+    <div className="w-full max-w-7xl mx-auto py-6 px-2 sm:px-4">
       <style>{`
-        /* Continuous Grid Tilting Animations */
+        /* Continuous Grid Tilting Animations (8 deg) */
         @keyframes tiltLeftRight {
-          0% { transform: rotate(-10deg); }
-          100% { transform: rotate(10deg); }
+          0% { transform: rotate(-8deg); }
+          100% { transform: rotate(8deg); }
         }
 
         @keyframes tiltRightLeft {
-          0% { transform: rotate(10deg); }
-          100% { transform: rotate(-10deg); }
+          0% { transform: rotate(8deg); }
+          100% { transform: rotate(-8deg); }
         }
 
         .tilt-card {
@@ -108,22 +108,21 @@ export default function CelebrantGallery({ celebrantEmail }: CelebrantGalleryPro
         }
       `}</style>
 
-      <h2 className="text-2xl font-serif font-semibold text-center mb-10 text-gray-800">
+      <h2 className="text-2xl font-serif font-semibold text-center mb-8 text-gray-800">
         Captured Moments
       </h2>
 
       {wishes.length === 0 ? (
         <p className="text-center text-gray-500">No wishes or photos shared yet.</p>
       ) : (
-        <div className="grid grid-cols-3 md:grid-cols-4 gap-6 md:gap-10 p-6">
+        <div className="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-4 p-2 sm:p-4">
           {wishes.map((item, index) => (
             <div
               key={item.id}
               onClick={() => handleCardClick(item)}
-              className="tilt-card cursor-pointer relative bg-white p-1 rounded-2xl shadow-md border border-gray-100"
+              className="tilt-card cursor-pointer relative bg-white p-1 md:p-1.5 rounded-2xl shadow-md border border-gray-100"
               style={cardAnimationStyles[index]}
             >
-              {/* Aspect Ratio 1:1 Square Image Container Only */}
               <div className="w-full aspect-square relative bg-gray-100 overflow-hidden rounded-xl">
                 {item.image_url ? (
                   <img
@@ -132,7 +131,7 @@ export default function CelebrantGallery({ celebrantEmail }: CelebrantGalleryPro
                     className="w-full h-full object-cover rounded-xl"
                   />
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center p-3 text-center text-xs text-gray-400 bg-gray-50 rounded-xl">
+                  <div className="w-full h-full flex items-center justify-center p-2 text-center text-[10px] sm:text-xs text-gray-400 bg-gray-50 rounded-xl">
                     No image attached
                   </div>
                 )}
@@ -142,16 +141,16 @@ export default function CelebrantGallery({ celebrantEmail }: CelebrantGalleryPro
         </div>
       )}
 
-      {/* 3D ZOOM & FLIP LIGHTBOX MODAL */}
+      {/* 3D ZOOM & FLIP LIGHTBOX MODAL (20% LARGER) */}
       {activeWish && (
         <div
-          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 md:p-6"
           onClick={closeModal}
         >
-          {/* Modal Container */}
+          {/* Increased max width from max-w-sm/max-w-md to max-w-md/max-w-xl (20% increase) */}
           <div
-            className="relative w-full max-w-sm md:max-w-md aspect-[3/4] perspective-1000"
-            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside card
+            className="relative w-full max-w-md md:max-w-xl aspect-[3/4] max-h-[85vh] perspective-1000"
+            onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
@@ -168,9 +167,9 @@ export default function CelebrantGallery({ celebrantEmail }: CelebrantGalleryPro
                 isFlipped ? 'rotate-y-180' : ''
               }`}
             >
-              {/* FRONT SIDE: Clean Image Only */}
-              <div className="absolute inset-0 w-full h-full bg-white rounded-3xl p-4 shadow-2xl backface-hidden flex flex-col items-center justify-between border border-gray-100">
-                <div className="w-full h-[90%] rounded-2xl overflow-hidden bg-gray-100">
+              {/* FRONT SIDE */}
+              <div className="absolute inset-0 w-full h-full bg-white rounded-3xl p-5 md:p-6 shadow-2xl backface-hidden flex flex-col items-center justify-between border border-gray-100">
+                <div className="w-full h-[92%] rounded-2xl overflow-hidden bg-gray-100">
                   {activeWish.image_url ? (
                     <img
                       src={activeWish.image_url}
@@ -184,26 +183,26 @@ export default function CelebrantGallery({ celebrantEmail }: CelebrantGalleryPro
                   )}
                 </div>
                 <div className="text-center py-1">
-                  <p className="text-xs text-gray-400 font-medium">
+                  <p className="text-xs md:text-sm text-gray-400 font-medium">
                     Tap to view message ↺
                   </p>
                 </div>
               </div>
 
-              {/* BACK SIDE: Message & Guest Name */}
-              <div className="absolute inset-0 w-full h-full bg-amber-50/90 rounded-3xl p-8 shadow-2xl backface-hidden rotate-y-180 flex flex-col justify-between border-2 border-amber-200/60 text-center">
+              {/* BACK SIDE */}
+              <div className="absolute inset-0 w-full h-full bg-amber-50/90 rounded-3xl p-8 md:p-10 shadow-2xl backface-hidden rotate-y-180 flex flex-col justify-between border-2 border-amber-200/60 text-center">
                 <div className="flex-1 flex flex-col items-center justify-center gap-4 my-auto">
-                  <span className="text-3xl">💌</span>
-                  <p className="text-base md:text-lg text-gray-700 italic font-serif leading-relaxed px-2 overflow-y-auto max-h-[220px]">
+                  <span className="text-4xl">💌</span>
+                  <p className="text-lg md:text-xl text-gray-700 italic font-serif leading-relaxed px-2 overflow-y-auto max-h-[300px]">
                     "{activeWish.message}"
                   </p>
                 </div>
 
                 <div className="pt-4 border-t border-amber-200/80">
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900 font-serif">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 font-serif">
                     {activeWish.guest_name || 'Anonymous Guest'}
                   </h3>
-                  <p className="text-xs text-amber-700 mt-2 font-medium">
+                  <p className="text-xs md:text-sm text-amber-700 mt-2 font-medium">
                     Tap card to flip back ↺
                   </p>
                 </div>

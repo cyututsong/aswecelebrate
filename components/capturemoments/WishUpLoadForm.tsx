@@ -172,7 +172,7 @@ export default function WishUploadForm({ celebrantEmail, onWishSubmitted }: Wish
                   placeholder="e.g., Sarah & Alex"
                   value={guestName}
                   onChange={(e) => setGuestName(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-sm bg-gray-50/50"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-sm bg-gray-50/50 text-black placeholder:text-gray-400 placeholder:opacity-100 mobile-input-fix"
                 />
               </div>
 
@@ -187,7 +187,7 @@ export default function WishUploadForm({ celebrantEmail, onWishSubmitted }: Wish
                   placeholder="Write your sweet note here..."
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-sm bg-gray-50/50 resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent text-sm bg-gray-50/50 resize-none text-black placeholder:text-gray-400 placeholder:opacity-100 mobile-input-fix"
                 />
               </div>
 
@@ -251,7 +251,7 @@ export default function WishUploadForm({ celebrantEmail, onWishSubmitted }: Wish
         </div>
       )}
 
-      {/* Tailwind Custom Keyframes for Slide-Up Animation */}
+      {/* Tailwind & Mobile Styling Keyframes */}
       <style>{`
         @keyframes slideUp {
           from {
@@ -263,6 +263,17 @@ export default function WishUploadForm({ celebrantEmail, onWishSubmitted }: Wish
         }
         .animate-slide-up {
           animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Fixes iOS/Android WebKit input text overrides */
+        .mobile-input-fix {
+          color: #000000 !important;
+          -webkit-text-fill-color: #000000 !important;
+        }
+        .mobile-input-fix::placeholder {
+          color: #9ca3af !important;
+          -webkit-text-fill-color: #9ca3af !important;
+          opacity: 1 !important;
         }
       `}</style>
     </>
