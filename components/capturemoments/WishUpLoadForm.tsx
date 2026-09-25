@@ -116,7 +116,7 @@ export default function WishUploadForm({ celebrantEmail, onWishSubmitted }: Wish
           className="w-14 h-14 bg-amber-500 hover:bg-amber-600 active:scale-95 text-white rounded-full shadow-xl shadow-amber-500/40 flex items-center justify-center transition-all duration-300 focus:outline-none ring-4 ring-amber-500/20"
           aria-label="Add Wish"
         >
-          <span className="text-3xl font-light leading-none mb-1">+</span>
+          <span className="text-3xl font-light leading-none mb-2">+</span>
         </button>
       </div>
 
