@@ -108,10 +108,6 @@ export default function CelebrantGallery({ celebrantEmail }: CelebrantGalleryPro
         }
       `}</style>
 
-      <h2 className="text-2xl font-serif font-semibold text-center mb-8 text-gray-800">
-        Captured Moments
-      </h2>
-
       {wishes.length === 0 ? (
         <p className="text-center text-gray-500">No wishes or photos shared yet.</p>
       ) : (
@@ -168,7 +164,7 @@ export default function CelebrantGallery({ celebrantEmail }: CelebrantGalleryPro
               }`}
             >
               {/* FRONT SIDE */}
-              <div className="absolute inset-0 w-full h-full bg-white rounded-3xl p-5 md:p-6 shadow-2xl backface-hidden flex flex-col items-center justify-between border border-gray-100">
+              <div className="absolute inset-0 w-full h-full bg-white rounded-3xl p-4 md:p-5 shadow-2xl backface-hidden flex flex-col items-center justify-between border border-gray-100">
                 <div className="w-full h-[92%] rounded-2xl overflow-hidden bg-gray-100">
                   {activeWish.image_url ? (
                     <img
@@ -190,7 +186,7 @@ export default function CelebrantGallery({ celebrantEmail }: CelebrantGalleryPro
               </div>
 
               {/* BACK SIDE */}
-              <div className="absolute inset-0 w-full h-full bg-amber-50/90 rounded-3xl p-8 md:p-10 shadow-2xl backface-hidden rotate-y-180 flex flex-col justify-between border-2 border-amber-200/60 text-center">
+              <div className="absolute inset-0 w-full h-full bg-amber-50/90 rounded-3xl p-4 md:p-8 shadow-2xl backface-hidden rotate-y-180 flex flex-col justify-between border-2 border-amber-200/60 text-center">
                 <div className="flex-1 flex flex-col items-center justify-center gap-4 my-auto">
                   <span className="text-4xl">💌</span>
                   <p className="text-lg md:text-xl text-gray-700 italic font-serif leading-relaxed px-2 overflow-y-auto max-h-[300px]">
