@@ -308,7 +308,7 @@ export default function CallieClient() {
         <p>Seven years of sunshine, giggles, and making waves! Jewel Callie Rae is overflowing with excitement to celebrate her 7th milestone voyage with her favorite family and friends. Come dive into an unforgettable day of laughter, swimming, sweet treats, and oceanic surprises!</p>
 
         <CountDown 
-          targetDate="2026-09-26T00:15:30" 
+          targetDate="2026-09-26T15:00:00+08:00" 
           label="Ocean Party Countdown" 
           variant="bubble" 
         />
