@@ -9,7 +9,7 @@ import GoogleTestimonial from "@/components/ui/widget/GoogleTestimonial";
 import VenueProperty from "@/components/ui/widget/VenueProperty";
 import Ctabuttons from "@/components/ui/buttons/CtaButtons";
 import SignupForm from "@/components/ui/widget/SignupForm";
-import { subscribeToNewsletter } from './actions';
+import { subscribeToNewsletter } from '../actions';
 
 //data
 import { featuresItems } from '@/data/featureTempalteData';
