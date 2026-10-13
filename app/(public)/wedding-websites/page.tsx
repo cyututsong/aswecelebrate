@@ -160,7 +160,7 @@ export default function WeddingWebsites() {
         </div>
       </section>
 
-      <section className={`flex flex-col px-5 py-10 md:py-30 md:px-10 h-screen bg-cover bg-center ${Style.testimonialSection}`}>
+      <section className={`flex flex-col px-5 py-10 md:py-30 md:px-10 bg-cover bg-center ${Style.testimonialSection}`}>
         <div>
 
           <div className="flex flex-col w-full max-w-5xl mx-auto mb-10 gap-4 justify-center items-center ">
@@ -168,15 +168,9 @@ export default function WeddingWebsites() {
             <p className="text-center text-white w-[60%]">We are proud to have helped countless couples create their dream wedding websites. Here are some of their testimonials:</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 w-full max-w-5xl mx-auto">
-            {testimonialsData.map((testimonial) => (
-                <div key={testimonial.id} className="w-full max-w-5xl mx-auto p-5 bg-[#f6f3ec] rounded-lg">
-                  <p className="text-center text-gray-700 italic">"{testimonial.message}"</p>
-                  <p className="text-center text-gray-500 mt-2">— {testimonial.name}</p>
-                </div>
-              ))}
-          </div>   
 
+          <GoogleTestimonial testimonials={testimonialsData} />
+ 
 
         </div>
       </section>

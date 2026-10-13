@@ -24,7 +24,7 @@ export default function GoogleTestimonial({
 }: TestimonialsProps) {
 
     return (
-        <div className={'grid grid-cols-3 gap-6 py-6 sm:py-20 px-6 bg-[#f8fafc]'}>
+        <div className={'grid grid-cols-3 gap-6 py-6 sm:py-20 px-6'}>
             {testimonials.map((testimonial) => (
                 <div key={testimonial.id} className='flex flex-col bg-white rounded-2xl p-6 shadow-sm cursor-pointer hover:shadow-lg transition-shadow gap-5'>
                     <div className='flex gap-x-1'>
