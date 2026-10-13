@@ -160,7 +160,7 @@ export default function WeddingWebsites() {
         </div>
       </section>
 
-      <section className={`flex flex-col px-5 py-10 md:py-30 md:px-10 bg-cover bg-center ${Style.testimonialSection}`}>
+      <section className={`flex flex-col px-5 py-10 md:py-30 md:px-10 h-screen bg-cover bg-center ${Style.testimonialSection}`}>
         <div>
 
           <div className="flex flex-col w-full max-w-5xl mx-auto mb-10 gap-4 justify-center items-center ">
@@ -176,6 +176,7 @@ export default function WeddingWebsites() {
                 </div>
               ))}
           </div>   
+
 
         </div>
       </section>
