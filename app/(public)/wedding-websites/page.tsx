@@ -11,10 +11,9 @@ import CtaButtons from "@/components/ui/buttons/CtaButtons";
 
 import TemplateInvitation from './images/template.jpg';
 import TemplateInvitation2 from './images/template2.jpg';
-import TemplateInvitation3 from './images/template3.jpg';
-import TemplateInvitation4 from './images/template4.jpg';
+import TemplateInvitation3 from './images/18th-brithday-mastephanie.jpg';
+import TemplateInvitation4 from './images/7th-birthday-callierae.jpg';
 import TemplateInvitation5 from './images/template5.jpg';
-import TemplateInvitation6 from './images/template6.jpg';
 import DesignImage from './images/design.webp';
 import ShareImage from './images/share.webp';
 import TrackImage from './images/track.webp';
@@ -25,10 +24,9 @@ import { testimonialsData } from '@/data/testimonialsData';
 const websiteDesigns = [
   { id: 1, src: TemplateInvitation, alt: 'template 1', category: 'Wedding' },
   { id: 2, src: TemplateInvitation2, alt: 'template 2', category: 'Dedication' },
-  { id: 3, src: TemplateInvitation3, alt: 'template 3', category: '18 Birthday' },
-  { id: 4, src: TemplateInvitation4, alt: 'template 4', category: '7th' },
+  { id: 3, src: TemplateInvitation3, alt: 'Ma Stephanie 18 Birthday ', category: '18 Birthday' },
+  { id: 4, src: TemplateInvitation4, alt: 'Jewel Callie Rae 7th Birthday', category: '7th' },
   { id: 5, src: TemplateInvitation5, alt: 'template 5', category: 'Wedding' },
-  { id: 6, src: TemplateInvitation6, alt: 'template 6', category: '18 Birthday' },
 ];
 
 
