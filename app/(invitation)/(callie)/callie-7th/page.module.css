@@ -11,14 +11,6 @@
   font-display: swap;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-    overflow-x: hidden;
-}
-
 .displayDestop {
   display: block;
 }
@@ -54,7 +46,8 @@ body {
 }
 
 
-body p, body li {
+.page p,
+.page li {
   font-family: "Fredoka", sans-serif;
 }
 
