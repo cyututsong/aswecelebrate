@@ -35,17 +35,7 @@ export default function stephaniePalasin() {
       <div>
         <h1>Welcome Stephanie Palasin</h1>
       </div>
-
-
-
-
-
-
-
-
-
-
-
+      
     </main>
   );
 }
