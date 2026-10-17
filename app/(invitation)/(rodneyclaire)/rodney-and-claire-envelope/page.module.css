@@ -1,5 +1,5 @@
 
-:global(.swiper-slide) {
+.cardStack :global(.swiper-slide) {
   overflow: visible !important;
 }
 
