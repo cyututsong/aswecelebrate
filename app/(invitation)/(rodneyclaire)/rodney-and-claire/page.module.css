@@ -78,6 +78,10 @@
   z-index: 2;
 }
 
+.cardStack > div {
+    height: 300px !important;
+}
+
 
 .pocket {
   position: absolute;
