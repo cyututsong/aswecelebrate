@@ -40,45 +40,41 @@ export default function WishUploadForm({ celebrantEmail, onWishSubmitted }: Wish
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     setLoading(true);
     setErrorMsg('');
     setSuccessMsg('');
 
     try {
-      let publicImageUrl: string | null = null;
+      // 1. Prepare the form data
+      const formData = new FormData();
 
-      // 1. Upload Image to Supabase Storage Bucket
+      formData.append('celebrantEmail', celebrantEmail);
+      formData.append('guestName', guestName.trim());
+      formData.append('message', message.trim());
+
+      // Include the image only if the user selected one
       if (imageFile) {
-        const fileExt = imageFile.name.split('.').pop();
-        const fileName = `${Date.now()}-${Math.random().toString(36).substring(2, 9)}.${fileExt}`;
-        const filePath = `uploads/${fileName}`;
-
-        const { error: uploadError } = await supabase.storage
-          .from('capture-moments')
-          .upload(filePath, imageFile);
-
-        if (uploadError) throw uploadError;
-
-        const { data: urlData } = supabase.storage
-          .from('capture-moments')
-          .getPublicUrl(filePath);
-
-        publicImageUrl = urlData.publicUrl;
+        formData.append('image', imageFile);
       }
 
-      // 2. Insert object into 'wishes' table using 'as any' bypass
-        const { data, error: dbError } = await (supabase.from('wishes') as any)
-        .insert([
-            {
-            celebrant_email: celebrantEmail,
-            guest_name: guestName,
-            message: message,
-            image_url: publicImageUrl,
-            },
-        ])
-        .select();
+      // 2. Submit the wish and optional image through our API
+      const response = await fetch('/api/wishes', {
+        method: 'POST',
+        body: formData,
+      });
 
-      if (dbError) throw dbError;
+      const result = await response.json();
+
+      // 3. Handle API errors, including rate-limit responses
+      if (!response.ok) {
+        throw new Error(
+          result.error || 'An error occurred while sharing your wish.',
+        );
+      }
+
+      // 4. Get the newly created wish
+      const newWish = result.wish as WishRow;
 
       setSuccessMsg('Your wish and photo have been added to the gallery!');
       setGuestName('');
@@ -86,17 +82,19 @@ export default function WishUploadForm({ celebrantEmail, onWishSubmitted }: Wish
       setImageFile(null);
       setImagePreview(null);
 
-      if (onWishSubmitted && data && data.length > 0) {
-        onWishSubmitted(data[0] as WishRow);
+      // 5. Notify the parent component
+      if (onWishSubmitted && newWish) {
+        onWishSubmitted(newWish);
       }
 
-      // Automatically close modal after 1.5 seconds on success
+      // 6. Automatically close the modal after 1.5 seconds
       setTimeout(() => {
         handleClose();
       }, 1500);
 
     } catch (err: unknown) {
-      console.error(err);
+      console.error('Wish submission error:', err);
+
       if (err instanceof Error) {
         setErrorMsg(err.message);
       } else {
@@ -106,6 +104,7 @@ export default function WishUploadForm({ celebrantEmail, onWishSubmitted }: Wish
       setLoading(false);
     }
   };
+
 
   return (
     <>
