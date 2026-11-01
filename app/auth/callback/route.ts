@@ -1,9 +1,16 @@
-
 import { NextResponse, type NextRequest } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = new URL(request.url);
+
+  console.log('AUTH CALLBACK DEBUG:', {
+    requestUrl: request.url,
+    origin,
+    host: request.headers.get('host'),
+    forwardedHost: request.headers.get('x-forwarded-host'),
+    forwardedProto: request.headers.get('x-forwarded-proto'),
+  });
 
   const code = searchParams.get('code');
   const nextParam = searchParams.get('next');
