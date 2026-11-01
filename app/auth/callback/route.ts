@@ -1,19 +1,12 @@
+
 import { NextResponse, type NextRequest } from 'next/server';
 import { createClient } from '@/lib/supabase/server';
 
 export async function GET(request: NextRequest) {
-  const { searchParams, origin } = new URL(request.url);
+  const requestUrl = new URL(request.url);
 
-  console.log('AUTH CALLBACK DEBUG:', {
-    requestUrl: request.url,
-    origin,
-    host: request.headers.get('host'),
-    forwardedHost: request.headers.get('x-forwarded-host'),
-    forwardedProto: request.headers.get('x-forwarded-proto'),
-  });
-
-  const code = searchParams.get('code');
-  const nextParam = searchParams.get('next');
+  const code = requestUrl.searchParams.get('code');
+  const nextParam = requestUrl.searchParams.get('next');
 
   // Allow only safe, relative paths.
   const next =
@@ -23,6 +16,27 @@ export async function GET(request: NextRequest) {
     !nextParam.startsWith('/\\')
       ? nextParam
       : '/dashboard';
+
+  // Use the public host provided by the reverse proxy.
+  const forwardedHost = request.headers.get('x-forwarded-host');
+  const host = request.headers.get('host');
+
+  const forwardedProto = request.headers.get('x-forwarded-proto');
+
+  const allowedHosts = ['aswecelebrate.com', 'localhost:3000'];
+
+  const publicHost = forwardedHost || host;
+
+  const isAllowedHost =
+    publicHost && allowedHosts.includes(publicHost);
+
+  const protocol =
+    forwardedProto === 'https' ? 'https' : 'http';
+
+  const origin =
+    isAllowedHost && publicHost
+      ? `${protocol}://${publicHost}`
+      : requestUrl.origin;
 
   if (!code) {
     return NextResponse.redirect(
