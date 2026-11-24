@@ -1,99 +1,217 @@
 @import "tailwindcss";
 
+/* ========================================
+   ASWECelebrate DESIGN SYSTEM
+   ======================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --color-primary:#16404d;
-  --color-secondary-cta:#ffffff;
-  --text-color-primary:#ffffff;
-  --background-beige:#f6f3ec;
-  --background-beige-light:#f6f3ec;
+  /* Brand colors - 60/30/10 */
+  --background: #f3eee3;
+  --foreground: #111111;
+
+  --color-primary: #111111;
+  --color-accent: #d9541e;
+  --color-secondary: #f3eee3;
+
+  /* Surface colors */
   --background-white: #ffffff;
+  --background-beige: #f3eee3;
+  --background-beige-light: #faf8f3;
+
+  /* Text colors */
+  --text-primary: #111111;
+  --text-secondary: #666666;
+  --text-muted: #888888;
+  --text-inverse: #ffffff;
+
+  /* Borders */
+  --border-color: #e5dfd3;
+
+  /* Typography */
+  --font-heading: var(--font-poppins), sans-serif;
+  --font-body: var(--font-mulish), sans-serif;
+  --font-accent: var(--font-playwrite), cursive;
+
+  /* Layout */
+  --container-width: 1300px;
+  --page-padding: 24px;
+
+  /* UI */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
 }
+
+/* ========================================
+   GLOBAL RESET & BASE STYLES
+   ======================================== */
 
 html {
   scroll-behavior: smooth;
 }
 
-
 body {
-  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-family: var(--font-body);
   background: var(--background);
   color: var(--foreground);
   overflow-x: hidden;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: var(--font-playfair-display), 'Playfair Display', serif;
-}
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
 
+h1,
+h2,
+h3,
+h4,
+h5,
 h6 {
-  font-family: var(--font-poppins), 'Poppins', sans-serif;
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
 }
 
 h1 {
-    font-size: 4.5rem;
+  font-size: clamp(2.25rem, 5vw, 4rem);
 }
 
 h2 {
-    font-size: 3.5rem;
+  font-size: clamp(1.875rem, 4vw, 3rem);
 }
 
 h3 {
-    font-size: 3rem;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
 }
 
 h4 {
-    font-size: 2.5rem;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+h5 {
+  font-size: 1.125rem;
+}
+
+h6 {
+  font-size: 1rem;
 }
 
 p {
-    font-size: 1.2rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
+a,
+button,
+input,
+textarea,
+select {
   font-family: var(--font-body);
 }
 
-li, p, a, span {
+button {
+  cursor: pointer;
+}
+
+/* ========================================
+   ACCENT TYPOGRAPHY
+   ======================================== */
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
   font-family: var(--font-body);
 }
+
+.font-accent {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+}
+
+/* ========================================
+   BRAND COLOR UTILITIES
+   ======================================== */
+
+.text-brand {
+  color: var(--color-primary);
+}
+
+.text-accent {
+  color: var(--color-accent);
+}
+
+.bg-brand {
+  background-color: var(--color-primary);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+.bg-cream {
+  background-color: var(--background);
+}
+
+.bg-surface {
+  background-color: var(--background-white);
+}
+
+.border-brand {
+  border-color: var(--border-color);
+}
+
+/* ========================================
+   SHARED LAYOUT
+   ======================================== */
 
 section > div {
-  max-width: 1300px;
-  margin: 0 auto;
+  max-width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
   width: 100%;
 }
 
-header > div, footer > div  {
-  max-width: 1300px;
+header > div,
+footer > div {
+  max-width: var(--container-width);
 }
 
-.underlineHeading:after {
-    content: "";
-    border: 3px solid #9e07ff;
-    border-radius: 3px;
-    width: 50px;
-    display: flex;
-    margin: 20px auto 0px auto;
+/* ========================================
+   DECORATIVE ELEMENTS
+   ======================================== */
+
+.underlineHeading::after {
+  content: "";
+  border: 2px solid var(--color-accent);
+  border-radius: 3px;
+  width: 50px;
+  display: block;
+  margin: 20px auto 0;
 }
 
-/* Cursor Trail Animations Effect - CSS*/
+/* ========================================
+   ANIMATIONS
+   ======================================== */
 
 @keyframes trailFadeOut {
   0% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1) rotate(0deg);
   }
+
   100% {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.7) rotate(4deg);
@@ -102,4 +220,18 @@ header > div, footer > div  {
 
 .animate-trail-fade {
   animation: trailFadeOut 1s forwards ease-out;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  :root {
+    --page-padding: 16px;
+  }
+
+  body {
+    font-size: 15px;
+  }
 }

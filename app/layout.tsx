@@ -1,30 +1,57 @@
-// app/layout.tsx
 import type { Metadata } from "next";
-import { Playfair_Display, Poppins } from 'next/font/google';
-import "@/app/globals.css"; // Ensure global CSS is imported here
-import { GoogleAnalytics } from '@next/third-parties/google';
+import { Poppins, Mulish, Playwrite_AU_SA_Guides } from "next/font/google";
+
+import "@/app/globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
+// ========================================
+// WEBSITE METADATA
+// ========================================
 
 export const metadata: Metadata = {
-  title: 'As We Celebrate',
-  description: 'Your one-stop destination for event planning, offering a curated selection of templates, venues, and expert advice to make your celebration unforgettable.',
+  title: "As We Celebrate",
+  description:
+    "Discover wedding venues, suppliers and talented professionals to make your celebration unforgettable.",
   icons: {
-    icon: "image/favicon.png",
+    icon: "/image/favicon.png",
   },
 };
 
-const playfairDisplay = Playfair_Display({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-playfair-display',
-  weight: ['400', '500', '600', '700'],
-});
+// ========================================
+// HEADING FONT - POPPINS
+// ========================================
 
 const poppins = Poppins({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-poppins',
-  weight: ['300', '400', '500', '600', '700'],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-poppins",
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
+
+// ========================================
+// BODY FONT - MULISH
+// ========================================
+
+const mulish = Mulish({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mulish",
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
+// ========================================
+// ACCENT FONT - PLAYWRITE AU SA GUIDES
+// ========================================
+
+const playwrite = Playwrite_AU_SA_Guides({
+  display: "swap",
+  variable: "--font-playwrite",
+  weight: "400",
+});
+
+// ========================================
+// ROOT LAYOUT
+// ========================================
 
 export default function RootLayout({
   children,
@@ -34,10 +61,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfairDisplay.variable} ${poppins.variable} h-full antialiased`}
+      className={`
+        ${poppins.variable}
+        ${mulish.variable}
+        ${playwrite.variable}
+        h-full antialiased
+      `}
     >
-      <body className="min-h-full flex flex-col" cz-shortcut-listen="true">
+      <body className="min-h-full flex flex-col">
         {children}
+
         <GoogleAnalytics gaId="G-XXXXXXXXXX" />
       </body>
     </html>
